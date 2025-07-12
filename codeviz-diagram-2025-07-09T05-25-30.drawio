@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <mxfile host="codeviz.app" modified="2025-07-09T05:25:30.059Z" agent="CodeViz Exporter" version="14.6.5" type="device">
+        <diagram id="codeviz-diagram" name="System Diagram">
+          <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+              <mxCell id="0"/>
+              <mxCell id="1" parent="0"/>
+              <mxCell id="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="" style="html=1;whiteSpace=wrap;container=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fillOpacity=20;strokeWidth=2;containerType=none;recursiveResize=0;movable=1;resizable=1;autosize=0;dropTarget=0" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)-wrapper">
+                <mxGeometry x="50" y="255" width="831" height="860" as="geometry"/>
+              </mxCell>
+              <mxCell id="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)_label" value="Backend Layers" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;labelBackgroundColor=white;spacing=5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)-wrapper">
+                <mxGeometry x="58" y="263" width="755" height="24" as="geometry"/>
+              </mxCell>
+<mxCell id="section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel-wrapper" value="" style="html=1;whiteSpace=wrap;container=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fillOpacity=20;strokeWidth=2;containerType=none;recursiveResize=0;movable=1;resizable=1;autosize=0;dropTarget=0" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                <mxGeometry x="460" y="470" width="240" height="700" as="geometry"/>
+              </mxCell>
+              <mxCell id="section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel-wrapper_label" value="Arquitectura de Alto Nivel" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;labelBackgroundColor=white;spacing=5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                <mxGeometry x="468" y="478" width="164" height="24" as="geometry"/>
+              </mxCell>
+<mxCell id="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)-wrapper" value="" style="html=1;whiteSpace=wrap;container=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fillOpacity=20;strokeWidth=2;containerType=none;recursiveResize=0;movable=1;resizable=1;autosize=0;dropTarget=0" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                <mxGeometry x="700" y="460" width="891" height="1135" as="geometry"/>
+              </mxCell>
+              <mxCell id="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)-wrapper_label" value="Componentes del Backend (Spring Boot)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;labelBackgroundColor=white;spacing=5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                <mxGeometry x="708" y="468" width="815" height="24" as="geometry"/>
+              </mxCell>
+<mxCell id="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper" value="" style="html=1;whiteSpace=wrap;container=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fillOpacity=20;strokeWidth=2;containerType=none;recursiveResize=0;movable=1;resizable=1;autosize=0;dropTarget=0" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                <mxGeometry x="50" y="470" width="420" height="990" as="geometry"/>
+              </mxCell>
+              <mxCell id="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper_label" value="Componentes del Frontend (React)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;labelBackgroundColor=white;spacing=5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                <mxGeometry x="58" y="478" width="344" height="24" as="geometry"/>
+              </mxCell>
+<mxCell id="section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper" value="" style="html=1;whiteSpace=wrap;container=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;fillOpacity=20;strokeWidth=2;containerType=none;recursiveResize=0;movable=1;resizable=1;autosize=0;dropTarget=0" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                <mxGeometry x="1591" y="450" width="390" height="660" as="geometry"/>
+              </mxCell>
+              <mxCell id="section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper_label" value="Diagrama de Componentes (Ejemplo - Frontend)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;labelBackgroundColor=white;spacing=5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                <mxGeometry x="1599" y="458" width="314" height="24" as="geometry"/>
+              </mxCell>
+              <mxCell id="search-results-group-f78cc583d24013ad41a3efe892a76316" value="Search Results" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="1">
+                    <mxGeometry x="12" y="12" width="2006" height="1595" as="geometry"/>
+                  </mxCell>
+<mxCell id="terminal-f78cc583d24013ad41a3efe892a76316" value="Terminal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="1">
+                    <mxGeometry x="955" y="1807" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="search-result-f78cc583d24013ad41a3efe892a76316" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                    <mxGeometry x="210" y="80" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="backend_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel" value="Backend&lt;br&gt;Spring Boot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel-wrapper">
+                    <mxGeometry x="40" y="440" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="database_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel" value="Base de Datos&lt;br&gt;Persistence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel-wrapper">
+                    <mxGeometry x="40" y="600" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="frontend_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel" value="Frontend&lt;br&gt;React" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel-wrapper">
+                    <mxGeometry x="40" y="280" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="user_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel" value="Usuario&lt;br&gt;End User" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel-wrapper">
+                    <mxGeometry x="40" y="120" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="frontendApi_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="Frontend API&lt;br&gt;React Services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)-wrapper">
+                    <mxGeometry x="450" y="120" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="config_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="Config&lt;br&gt;Application Config" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                    <mxGeometry x="631" y="120" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="controller_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="Controller&lt;br&gt;API Presentation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                    <mxGeometry x="210" y="280" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="dto_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="DTO&lt;br&gt;Data Transfer Object" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                    <mxGeometry x="210" y="600" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="enums_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="Enums&lt;br&gt;Constants" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                    <mxGeometry x="340" y="170" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="exception_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="Exception&lt;br&gt;Error Handling" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                    <mxGeometry x="40" y="120" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="model_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="Model&lt;br&gt;Domain Entities" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                    <mxGeometry x="360" y="760" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="repository_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="Repository&lt;br&gt;Data Persistence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                    <mxGeometry x="360" y="600" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="security_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="Security&lt;br&gt;Auth/AuthZ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                    <mxGeometry x="190" y="120" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="service_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="Service&lt;br&gt;Business Logic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                    <mxGeometry x="281" y="440" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="util_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" value="Util&lt;br&gt;Utilities" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="subGraph0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                    <mxGeometry x="481" y="490" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="appTs_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" value="App.tsx&lt;br&gt;Root Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper">
+                    <mxGeometry x="70" y="280" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="backendApi_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" value="Backend API&lt;br&gt;RESTful API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper">
+                    <mxGeometry x="190" y="890" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="components_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" value="Components&lt;br&gt;UI Elements" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper">
+                    <mxGeometry x="40" y="600" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="hooks_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" value="Hooks&lt;br&gt;Reusable Logic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper">
+                    <mxGeometry x="40" y="760" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="lib_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" value="Lib&lt;br&gt;Utilities" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper">
+                    <mxGeometry x="220" y="510" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="mainTs_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" value="main.tsx&lt;br&gt;Entry Point" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper">
+                    <mxGeometry x="70" y="120" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="pages_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" value="Pages&lt;br&gt;Views" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper">
+                    <mxGeometry x="70" y="440" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="services_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" value="Services&lt;br&gt;API Interaction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper">
+                    <mxGeometry x="190" y="730" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="app_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" value="App&lt;br&gt;Root Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper">
+                    <mxGeometry x="50" y="120" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="backendApi_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" value="Backend API&lt;br&gt;RESTful API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper">
+                    <mxGeometry x="190" y="560" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="components_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" value="Components&lt;br&gt;UI Elements" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper">
+                    <mxGeometry x="150" y="340" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="hooks_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" value="Hooks&lt;br&gt;Reusable Logic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper">
+                    <mxGeometry x="40" y="450" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="pages_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" value="Pages&lt;br&gt;Views" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper">
+                    <mxGeometry x="50" y="230" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="services_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" value="Services&lt;br&gt;API Interaction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper">
+                    <mxGeometry x="190" y="450" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="report-section-f78cc583d24013ad41a3efe892a76316-0" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                    <mxGeometry x="210" y="190" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="report-section-f78cc583d24013ad41a3efe892a76316-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                    <mxGeometry x="490" y="300" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="report-section-f78cc583d24013ad41a3efe892a76316-3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                    <mxGeometry x="1055.5" y="290" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="report-section-f78cc583d24013ad41a3efe892a76316-5" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                    <mxGeometry x="170" y="300" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="report-section-f78cc583d24013ad41a3efe892a76316-7" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                    <mxGeometry x="1846" y="270" width="120" height="60" as="geometry"/>
+                  </mxCell>
+<mxCell id="report-section-f78cc583d24013ad41a3efe892a76316-8" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5" vertex="1" parent="search-results-group-f78cc583d24013ad41a3efe892a76316">
+                    <mxGeometry x="1696" y="280" width="120" height="60" as="geometry"/>
+                  </mxCell>
+              <mxCell id="edge-edge-search-to-terminal-f78cc583d24013ad41a3efe892a76316" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="search-results-group-f78cc583d24013ad41a3efe892a76316" target="terminal-f78cc583d24013ad41a3efe892a76316">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-edge-search-to-terminal-f78cc583d24013ad41a3efe892a76316_label" value="Provides context to" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-edge-search-to-terminal-f78cc583d24013ad41a3efe892a76316">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_user_frontend_0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="user_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel" target="frontend_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_user_frontend_0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel_label" value="Interactúa con" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_user_frontend_0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_frontend_backend_1_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="frontend_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel" target="backend_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_frontend_backend_1_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel_label" value="Realiza peticiones HTTP a" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_frontend_backend_1_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_backend_database_2_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="backend_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel" target="database_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_backend_database_2_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel_label" value="Interactúa con" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_backend_database_2_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-1-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel-wrapper" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="report-section-f78cc583d24013ad41a3efe892a76316-1" target="section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel-wrapper">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-1-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel-wrapper_label" value="Diagram" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-report-section-f78cc583d24013ad41a3efe892a76316-1-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Arquitectura-de-Alto-Nivel-wrapper">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_controller_service_0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="controller_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" target="service_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_controller_service_0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)_label" value="Delega a" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_controller_service_0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_service_repository_1_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="service_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" target="repository_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_service_repository_1_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)_label" value="Accede a" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_service_repository_1_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_repository_model_2_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="repository_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" target="model_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_repository_model_2_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)_label" value="Gestiona" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_repository_model_2_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_controller_dto_3_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="controller_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" target="dto_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_controller_dto_3_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)_label" value="Usa" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_controller_dto_3_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_service_dto_4_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="service_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" target="dto_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_service_dto_4_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)_label" value="Usa" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_service_dto_4_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_security_controller_5_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="security_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" target="controller_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_security_controller_5_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)_label" value="Intercepta" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_security_controller_5_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_frontendApi_controller_6_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="frontendApi_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)" target="controller_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_frontendApi_controller_6_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)_label" value="Peticiones HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_frontendApi_controller_6_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-3-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)-wrapper" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="report-section-f78cc583d24013ad41a3efe892a76316-3" target="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)-wrapper">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-3-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)-wrapper_label" value="Diagram" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-report-section-f78cc583d24013ad41a3efe892a76316-3-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Backend-(Spring-Boot)-wrapper">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_mainTs_appTs_0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="mainTs_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" target="appTs_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_mainTs_appTs_0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)_label" value="Renderiza" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_mainTs_appTs_0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_appTs_pages_1_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="appTs_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" target="pages_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_appTs_pages_1_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)_label" value="Define rutas para" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_appTs_pages_1_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_pages_components_2_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="pages_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" target="components_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_pages_components_2_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)_label" value="Compone" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_pages_components_2_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_pages_services_3_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="pages_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" target="services_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_pages_services_3_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)_label" value="Usa" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_pages_services_3_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_components_services_4_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="components_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" target="services_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_components_services_4_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)_label" value="Usa" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_components_services_4_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_pages_hooks_5_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="pages_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" target="hooks_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_pages_hooks_5_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)_label" value="Usa" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_pages_hooks_5_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_components_hooks_6_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="components_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" target="hooks_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_components_hooks_6_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)_label" value="Usa" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_components_hooks_6_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_services_backendApi_7_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="services_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)" target="backendApi_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-L_services_backendApi_7_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)_label" value="Peticiones a" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-L_services_backendApi_7_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-5-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="report-section-f78cc583d24013ad41a3efe892a76316-5" target="section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-5-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper_label" value="Diagram" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-report-section-f78cc583d24013ad41a3efe892a76316-5-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Componentes-del-Frontend-(React)-wrapper">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-L_app_pages_0_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="app_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" target="pages_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-L_pages_components_1_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="pages_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" target="components_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-L_pages_services_2_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="pages_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" target="services_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-L_components_services_3_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="components_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" target="services_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-L_pages_hooks_4_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="pages_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" target="hooks_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-L_components_hooks_5_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="components_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" target="hooks_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-L_services_backendApi_6_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="services_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)" target="backendApi_f78cc583d24013ad41a3efe892a76316_section_section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-8-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="report-section-f78cc583d24013ad41a3efe892a76316-8" target="section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-8-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper_label" value="Diagram" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="edge-report-section-f78cc583d24013ad41a3efe892a76316-8-to-section-diagram-f78cc583d24013ad41a3efe892a76316-Diagrama-de-Componentes-(Ejemplo---Frontend)-wrapper">
+                  <mxGeometry x="-0.2" y="10" relative="1" as="geometry">
+                    <mxPoint as="offset"/>
+                  </mxGeometry>
+                </mxCell>
+<mxCell id="edge-search-result-f78cc583d24013ad41a3efe892a76316-to-report-section-f78cc583d24013ad41a3efe892a76316-0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="search-result-f78cc583d24013ad41a3efe892a76316" target="report-section-f78cc583d24013ad41a3efe892a76316-0">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-0-to-report-section-f78cc583d24013ad41a3efe892a76316-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="report-section-f78cc583d24013ad41a3efe892a76316-0" target="report-section-f78cc583d24013ad41a3efe892a76316-1">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-0-to-report-section-f78cc583d24013ad41a3efe892a76316-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="report-section-f78cc583d24013ad41a3efe892a76316-0" target="report-section-f78cc583d24013ad41a3efe892a76316-3">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-0-to-report-section-f78cc583d24013ad41a3efe892a76316-5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="report-section-f78cc583d24013ad41a3efe892a76316-0" target="report-section-f78cc583d24013ad41a3efe892a76316-5">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-0-to-report-section-f78cc583d24013ad41a3efe892a76316-7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="report-section-f78cc583d24013ad41a3efe892a76316-0" target="report-section-f78cc583d24013ad41a3efe892a76316-7">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+<mxCell id="edge-report-section-f78cc583d24013ad41a3efe892a76316-0-to-report-section-f78cc583d24013ad41a3efe892a76316-8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#808080;strokeWidth=2;jumpStyle=arc;jumpSize=10;spacing=15;labelBackgroundColor=white;labelBorderColor=none" edge="1" parent="1" source="report-section-f78cc583d24013ad41a3efe892a76316-0" target="report-section-f78cc583d24013ad41a3efe892a76316-8">
+                  <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+          </mxGraphModel>
+        </diagram>
+      </mxfile>

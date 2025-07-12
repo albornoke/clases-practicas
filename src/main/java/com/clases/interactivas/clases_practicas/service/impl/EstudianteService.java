@@ -1,5 +1,7 @@
 package com.clases.interactivas.clases_practicas.service.impl;
 
+import com.clases.interactivas.clases_practicas.dto.request.RegistroEstudianteRequest;
+import com.clases.interactivas.clases_practicas.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,31 @@ import com.clases.interactivas.clases_practicas.model.Estudiante;
 public class EstudianteService {
     @Autowired
     private EstudianteRepository estudianteRepository;
+    @Autowired
+    private UsuarioService usuarioService;
+    @Autowired
+    private FileStorageService fileStorageService;
+
+    public Estudiante createEstudiante(RegistroEstudianteRequest request){
+        Usuario usuario = new Usuario();
+        usuario.setEmail(request.getCorreo());
+        usuario.setPassword(request.getContraseña());
+        usuario.setRol("ESTUDIANTE");
+        Usuario usuarioCreado = usuarioService.registrarUsuario(usuario);
+        String fotoUrl = null;
+        if(request.getFoto() != null && !request.getFoto().isEmpty()){
+            fotoUrl = fileStorageService.storeFile(request.getFoto());
+        }
+        Estudiante estudiante = new Estudiante();
+        estudiante.setNombre(request.getNombre());
+        estudiante.setApellido(request.getApellido());
+        estudiante.setTelefono(request.getTelefono());
+        estudiante.setDescripcion(request.getDescripcion());
+        estudiante.setGrado(request.getGrado());
+        estudiante.setFotoUrl(fotoUrl);
+        estudiante.setUsuario(usuarioCreado);
+        return estudianteRepository.save(estudiante);
+    }
 
     public List<Estudiante> getAllEstudiantes() {
         return estudianteRepository.findAll();
@@ -27,7 +54,7 @@ public class EstudianteService {
     public Estudiante updateEstudiante(Long id, Estudiante estudiante) {
         if(estudianteRepository.existsById(id)) {
             estudiante.setId(id);
-            estudianteRepository.save(estudiante);
+            return estudianteRepository.save(estudiante);
         }
         return null;
     }

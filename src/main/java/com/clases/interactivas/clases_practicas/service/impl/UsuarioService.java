@@ -18,9 +18,8 @@ public class UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
-
     @Autowired
-    private PasswordEncoder passwordEncoder; // Inyectar PasswordEncoder
+    private PasswordEncoder passwordEncoder; 
 
     public Usuario registrarUsuario(Usuario usuario) {
         if (usuarioRepository.findByEmail(usuario.getEmail()).isPresent()) {
@@ -38,10 +37,8 @@ public class UsuarioService {
     public Usuario autenticarUsuario(String email, String password) {
         Usuario usuario = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
-
                 boolean passwordMatches = passwordEncoder.matches(password, usuario.getPassword());
-                System.out.println("Password matches: " + passwordMatches); // Agrega esta línea
-
+                //System.out.println("Password matches: " + passwordMatches); // Agrega esta línea
                 if (!passwordMatches) {
                     throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Credenciales inválidas");
                 }
@@ -69,7 +66,6 @@ public class UsuarioService {
             usuarioExistente.setRol(usuario.getRol().toUpperCase()); // Normalizar a mayúsculas
         }
         usuarioExistente.setDocente(usuario.getDocente());
-
         return usuarioRepository.save(usuarioExistente);
     }
 

@@ -79,7 +79,7 @@ public class ClaseService {
     existingClase.setHoraInicio(clase.getHoraInicio());
     existingClase.setHoraFin(clase.getHoraFin());
     existingClase.setTema(clase.getTema());
-    existingClase.setEnlace_reunion(clase.getUrl());
+    existingClase.setUrl(clase.getUrl());
     existingClase.setDocente(clase.getDocente());
 
     return claseRepository.save(existingClase);

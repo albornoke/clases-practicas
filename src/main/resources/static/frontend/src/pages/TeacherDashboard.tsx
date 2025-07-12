@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { ReviewAssignmentModal } from "@/components/ReviewAssignmentModal";
 import { GradeAssignmentModal } from "@/components/GradeAssignmentModal";
 import { useState } from "react";
+import OnlineStudentsList from "../components/OnlineStudentsList";
 
 const TeacherDashboard = () => {
   const [selectedAssignment, setSelectedAssignment] = useState<any>(null);
@@ -40,7 +41,6 @@ const TeacherDashboard = () => {
 
   const estadisticas = {
     estudiantesTotal: 24,
-    estudiantesOnline: estudiantesOnline.length,
     clasesHoy: 5,
     actividadesPendientes: actividadesPendientes.length
   };
@@ -101,8 +101,9 @@ const TeacherDashboard = () => {
               <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-green-600">{estadisticas.estudiantesOnline}</div>
-              <p className="text-xs text-muted-foreground">Estudiantes conectados</p>
+              {/* Puedes mostrar el componente OnlineStudentsList aquí para contar los online si lo deseas */}
+              <OnlineStudentsList />
+              <p className="text-xs text-muted-foreground mt-2">Estudiantes conectados</p>
             </CardContent>
           </Card>
 
@@ -140,25 +141,8 @@ const TeacherDashboard = () => {
               <CardDescription>Estudiantes conectados en tiempo real</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                {estudiantesOnline.map((estudiante) => (
-                  <div key={estudiante.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <Avatar className="h-8 w-8">
-                        <AvatarImage src={estudiante.avatar} />
-                        <AvatarFallback>{estudiante.nombre.charAt(0)}</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="font-medium text-sm">{estudiante.nombre}</p>
-                        <p className="text-xs text-gray-500">{estudiante.materia}</p>
-                      </div>
-                    </div>
-                    <Badge variant="outline" className="text-green-600">
-                      {estudiante.tiempo}
-                    </Badge>
-                  </div>
-                ))}
-              </div>
+              {/* Aquí también puedes mostrar la lista detallada */}
+              <OnlineStudentsList />
             </CardContent>
           </Card>
 

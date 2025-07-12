@@ -6,17 +6,17 @@ spring:
     password: 12345
     driver-class-name: org.postgresql.Driver
   jpa:
+    open-in-view: false
     hibernate:
       ddl-auto: update
     show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
   servlet:
     multipart:
-      max-file-size: 10MB
-      max-request-size: 10MB
+      max-file-size: 5MB
+      max-request-size: 5MB
   task:
     execution:
       pool:
@@ -28,7 +28,8 @@ server:
   error:
     include-message: always
   forward-headers-strategy: framework
-
+file:
+  upload-dir: uploads
 google:
   calendar:
     api:
@@ -39,12 +40,10 @@ google:
     credentials:
      file:
         path: classpath:google-calendar-credentials.json
-
 #ai:
 # api:
 #    endpoint: http://localhost:8080/api/ai # O la URL real de tu API de IA
 #    key: YourAIAPIKeyHere # Reemplaza con tu clave de API real
-    
 jwt:
   secret: JjdP3kF5rDvhReN48gak6mfF3JMWoeJXtklmGzxBkwVDRoVX7MtxJD5Z+z6KIR0eKTYiATc9bdUrqgQZlPOaQA==
   expiration:

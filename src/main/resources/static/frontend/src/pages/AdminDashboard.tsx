@@ -103,6 +103,12 @@ const AdminDashboard = () => {
                   Agregar Administrador
                 </Button>
               </Link>
+              <Link to="/register/student">
+                <Button className="w-full h-16 bg-red-600 hover:bg-red-700 text-lg">
+                  <Shield className="h-6 w-6 mr-3" />
+                  Agregar Estudiante
+                </Button>
+              </Link>
             </div>
           </CardContent>
         </Card>

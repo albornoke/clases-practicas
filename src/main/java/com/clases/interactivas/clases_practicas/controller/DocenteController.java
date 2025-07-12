@@ -2,11 +2,15 @@ package com.clases.interactivas.clases_practicas.controller;
 
 import java.util.List;
 
-                                                                                                                                           import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 
+import com.clases.interactivas.clases_practicas.dto.request.RegistroDocenteRequest;
 import com.clases.interactivas.clases_practicas.model.Docente;
 import com.clases.interactivas.clases_practicas.service.impl.DocenteService;
 
@@ -17,7 +21,7 @@ import com.clases.interactivas.clases_practicas.service.impl.DocenteService;
 public class DocenteController {
     @Autowired
     private DocenteService docenteService;
-  
+
     @GetMapping
     public List<Docente> getAllDocentes() {
         return docenteService.getAllDocentes();
@@ -55,4 +59,16 @@ public class DocenteController {
     public List<Docente> findByApellido(@PathVariable String apellido) {
         return docenteService.findByApellido(apellido);
     }
+
+    @PostMapping(value = "/registro", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<?> registrarDocente(
+            @Valid @ModelAttribute RegistroDocenteRequest registroDocenteRequest) {
+        try {
+            Docente docente = docenteService.createDocente(registroDocenteRequest);
+            return ResponseEntity.ok(docente);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
 }

@@ -7,7 +7,7 @@ export const About = () => {
   const achievements = [
     { icon: GraduationCap, label: "Licenciada en Educación", value: "Universidad Nacional" },
     { icon: Users, label: "Estudiantes Graduados", value: "100+" },
-    { icon: Trophy, label: "Años de Experiencia", value: "5+" },
+    { icon: Trophy, label: "Años de Experiencia", value: "25+" },
     { icon: Heart, label: "Pasión por Enseñar", value: "Desde siempre" }
   ];
 
@@ -35,7 +35,7 @@ export const About = () => {
               </h2>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                Soy María, una educadora apasionada con más de 5 años de experiencia 
+                Soy María, una educadora apasionada con más de 25 años de experiencia 
                 ayudando a niños y adolescentes a alcanzar su máximo potencial académico. 
                 Mi enfoque personalizado y metodología comprobada han transformado la 
                 experiencia de aprendizaje de más de 100 estudiantes.

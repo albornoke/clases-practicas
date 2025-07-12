@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/clase")
-@CrossOrigin(origins = "http://localhost:5173") // Considera restringir los orígenes en producción
+@CrossOrigin(origins = "http://localhost:5173")
 @Validated
 public class ClaseController {
 
@@ -60,12 +60,13 @@ public class ClaseController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteClase(@PathVariable Long id) {
         claseService.deleteClase(id);
-        return ResponseEntity.noContent().build(); // HTTP 204 No Content es apropiado para delete exitoso
+        return ResponseEntity.noContent().build();
     }
 
-    // Endpoints de búsqueda adicionales basados en tu ClaseRepository
-    @GetMapping("/docente") // Considera usar un ID o un objeto más específico si es necesario
-    public List<Clase> findByDocente(@RequestBody Docente docente) { // Recibir el objeto Docente puede ser complejo vía GET. Considera POST o parámetros más simples.
+    @GetMapping("/docente")
+    public List<Clase> findByDocente(@RequestParam Long docenteId) { // Recibir el objeto Docente puede ser complejo vía GET. Considera POST o parámetros más simples.
+        Docente docente = new Docente();
+        docente.setId(docenteId);
         return claseService.findByDocente(docente);
     }
 

@@ -42,18 +42,18 @@ public class UsuarioController {
         return ResponseEntity.ok(new LoginResponseDto(token, usuario));
     }
 
-    @GetMapping("/generar-hash") // Este debe ir antes de /{id}
+    @GetMapping("/generar-hash")
     public ResponseEntity<String> generarHash(@RequestParam String password) {
         String hashedPassword = passwordEncoder.encode(password);
         return ResponseEntity.ok(hashedPassword);
     }
 
-    @GetMapping // Este es para obtener todos los usuarios
+    @GetMapping
     public ResponseEntity<List<Usuario>> obtenerTodos() {
         return ResponseEntity.ok(usuarioService.obtenerTodos());
     }
 
-    @GetMapping("/{id}") // Este es el que estaba interceptando
+    @GetMapping("/{id}")
     public ResponseEntity<Usuario> obtenerPorId(@PathVariable Long id) {
         return usuarioService.obtenerPorId(id)
                 .map(ResponseEntity::ok)

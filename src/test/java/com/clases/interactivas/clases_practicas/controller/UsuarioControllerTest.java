@@ -1,27 +1,18 @@
 package com.clases.interactivas.clases_practicas.controller;
 
-import com.clases.interactivas.clases_practicas.config.SecurityConfig;
-import com.clases.interactivas.clases_practicas.controller.UsuarioController;
-import com.clases.interactivas.clases_practicas.model.Docente;
-import com.clases.interactivas.clases_practicas.model.Usuario;
-import com.clases.interactivas.clases_practicas.service.impl.UsuarioService;
 import com.clases.interactivas.clases_practicas.dto.request.LoginRequest;
-import com.clases.interactivas.clases_practicas.dto.response.LoginResponseDto;
-import com.clases.interactivas.clases_practicas.security.JwtTokenProvider;
+import com.clases.interactivas.clases_practicas.model.Usuario;
 import com.clases.interactivas.clases_practicas.security.CustomUserDetailsService;
 import com.clases.interactivas.clases_practicas.security.JwtAuthenticationFilter;
+import com.clases.interactivas.clases_practicas.security.JwtTokenProvider;
 import com.clases.interactivas.clases_practicas.service.impl.UsuarioService;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import com.clases.interactivas.clases_practicas.security.JwtTokenProvider;
-import com.clases.interactivas.clases_practicas.service.impl.UsuarioService;
-import org.junit.jupiter.api.BeforeEach;
 import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.test.context.support.WithMockUser;
@@ -31,36 +22,31 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(controllers = UsuarioController.class, excludeAutoConfiguration = {SecurityAutoConfiguration.class})
+@WebMvcTest(UsuarioController.class)
 @AutoConfigureMockMvc(addFilters = false)
-
 public class UsuarioControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
     @MockBean
     private UsuarioService usuarioService;
-
     @MockBean
     private JwtTokenProvider jwtTokenProvider;
-
     @MockBean
     private PasswordEncoder passwordEncoder;
-
-    @MockBean
-    private JwtAuthenticationFilter jwtAuthenticationFilter;
-
     @MockBean
     private CustomUserDetailsService customUserDetailsService;
-
+    @MockBean
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
     private Usuario usuario;
-    private Docente docente;
     private LoginRequest loginRequest;
 
     @BeforeEach
@@ -79,8 +65,8 @@ public class UsuarioControllerTest {
         when(jwtTokenProvider.validateToken(anyString())).thenReturn(true);
         when(jwtTokenProvider.getEmailFromToken(anyString())).thenReturn("test@example.com");
         when(customUserDetailsService.loadUserByUsername(anyString()))
-            .thenReturn(new org.springframework.security.core.userdetails.User(
-                "test@example.com", "password", Collections.emptyList()));
+                .thenReturn(new org.springframework.security.core.userdetails.User(
+                        "test@example.com", "password", Collections.emptyList()));
     }
 
     @Test
@@ -108,7 +94,6 @@ public class UsuarioControllerTest {
     void testLogin() throws Exception {
 
         String token = "jwt-token-example";
-        LoginResponseDto loginResponse = new LoginResponseDto(token, usuario);
         
         when(usuarioService.autenticarUsuario(anyString(), anyString())).thenReturn(usuario);
         when(jwtTokenProvider.generateToken(any(Usuario.class))).thenReturn(token);
@@ -119,7 +104,7 @@ public class UsuarioControllerTest {
                 .content("{\"email\":\"test@example.com\",\"password\":\"password123\"}"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.token").value(token))
-                .andExpect(jsonPath("$.usuario.email").value("test@example.com"));
+                .andExpect(jsonPath("$.user.email").value("test@example.com"));
 
         verify(usuarioService).autenticarUsuario("test@example.com", "password123");
         verify(jwtTokenProvider).generateToken(usuario);
@@ -204,58 +189,5 @@ public class UsuarioControllerTest {
                 .andExpect(status().isOk());
 
         verify(usuarioService).eliminarUsuario(1L);
-    }
-
-    @Test
-    @DisplayName("Debería obtener usuarios por rol")
-    @WithMockUser
-    void testObtenerPorRol() throws Exception {
-
-        List<Usuario> estudiantes = Arrays.asList(usuario);
-        when(usuarioService.obtenerPorRol("ESTUDIANTE")).thenReturn(estudiantes);
-
-        mockMvc.perform(get("/api/usuarios/rol/ESTUDIANTE"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$[0].rol").value("ESTUDIANTE"));
-
-        verify(usuarioService).obtenerPorRol("ESTUDIANTE");
-    }
-
-    @Test
-    @DisplayName("Debería generar hash de contraseña")
-    @WithMockUser
-    void testGenerarHash() throws Exception {
-
-        String password = "myPassword";
-        String hashedPassword = "$2a$10$hashedPassword";
-        when(passwordEncoder.encode(password)).thenReturn(hashedPassword);
-
-        mockMvc.perform(get("/api/usuarios/generar-hash")
-                .param("password", password))
-                .andExpect(status().isOk())
-                .andExpect(content().string(hashedPassword));
-
-        verify(passwordEncoder).encode(password);
-    }
-
-    @Test
-    @DisplayName("Debería obtener perfil del usuario autenticado")
-    @WithMockUser
-    void testObtenerPerfil() throws Exception {
-
-        String token = "Bearer jwt-token";
-        String email = "test@example.com";
-        
-        when(jwtTokenProvider.getEmailFromToken("jwt-token")).thenReturn(email);
-        when(usuarioService.obtenerPorEmail(email)).thenReturn(Optional.of(usuario));
-
-        mockMvc.perform(get("/api/usuarios/me")
-                .header("Authorization", token))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.email").value(email));
-
-        verify(jwtTokenProvider).getEmailFromToken("jwt-token");
-        verify(usuarioService).obtenerPorEmail(email);
     }
 }

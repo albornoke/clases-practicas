@@ -26,3 +26,9 @@ apiClient.interceptors.request.use(
 
 export default apiClient;
 
+export async function fetchOnlineStudents() {
+  const response = await fetch("/api/estudiante/online");
+  if (!response.ok) throw new Error("Error al obtener estudiantes online");
+  return response.json();
+}
+

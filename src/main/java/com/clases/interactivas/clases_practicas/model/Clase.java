@@ -11,6 +11,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "clase")
@@ -18,27 +20,39 @@ public class Clase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "nombre")
+    private String nombre;
+    @Column(name = "descripcion")
+    private String descripcion;
+    @NotNull
     @Column(name = "fecha")
     private Date fecha;
+    @NotNull
     @Column(name = "hora_inicio")
     private Time horaInicio;
+    @NotNull
     @Column(name = "hora_fin")
     private Time horaFin;
+    @NotNull
+    @Size(min = 1)
     @Column(name = "tema")
     private String tema;
     @Column(name = "url")
     private String url;
+    @NotNull
     @Column(name = "materia")
     private String materia;
     @ManyToOne
-    @JoinColumn(name = "docente_id", nullable = false) // Asegúrate que la columna referenciada exista y considera nullable=false si una clase siempre debe tener un docente.
+    @JoinColumn(name = "docente_id", nullable = false)
     private Docente docente;
 
     public Clase(){}
 
-    public Clase(long id, Date fecha, Time horaInicio, Time horaFin, String tema, String url,
-            String materia, Docente docente) {
+    public Clase(long id, String nombre, String descripcion, Date fecha, Time horaInicio, Time horaFin, String tema,
+                 String url, String materia, Docente docente) {
         this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
         this.fecha = fecha;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
@@ -55,6 +69,14 @@ public class Clase {
     public void setId(long id) {
         this.id = id;
     }
+
+    public String getNombre() {return nombre;}
+
+    public void setNombre(String nombre) {this.nombre = nombre; }
+
+    public String getDescripcion() {return descripcion; }
+
+    public void setDescripcion(String descripcion) {this.descripcion = descripcion; }
 
     public Date getFecha() {
         return fecha;
@@ -92,7 +114,7 @@ public class Clase {
         return url;
     }
 
-    public void setEnlace_reunion(String url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 

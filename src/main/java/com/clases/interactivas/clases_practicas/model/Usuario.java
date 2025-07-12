@@ -20,8 +20,7 @@ public class Usuario {
     private String password; // Debe estar encriptada (ej: BCrypt)
     @Column(name = "rol", nullable = false)
     private String rol;      // Valores posibles: "DOCENTE", "ESTUDIANTE", "ADMIN"
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "docente_id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "usuario")
     private Docente docente;
 
     public Long getId() {

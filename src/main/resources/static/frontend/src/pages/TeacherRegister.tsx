@@ -31,13 +31,44 @@ const TeacherRegister = () => {
     setFormData(prev => ({ ...prev, foto: file }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Docente registrado",
-      description: "La cuenta del docente ha sido creada correctamente",
-    });
-    navigate("/admin");
+    const data = new FormData();
+    data.append("nombre", formData.nombre);
+    data.append("apellido", formData.apellido);
+    data.append("correo", formData.correo);
+    data.append("contraseña", formData.contraseña);
+    data.append("telefono", formData.telefono);
+    data.append("descripcion", formData.descripcion);
+    if (formData.foto) {
+      data.append("foto", formData.foto);
+    }
+    try {
+      const response = await fetch("/api/docente/registro", {
+        method: "POST",
+        body: data
+      });
+      if (response.ok) {
+        toast({
+          title: "Docente registrado",
+          description: "La cuenta del docente ha sido creada correctamente",
+        });
+        navigate("/admin");
+      } else {
+        const error = await response.text();
+        toast({
+          title: "Error al registrar docente",
+          description: error,
+          variant: "destructive"
+        });
+      }
+    } catch (err) {
+      toast({
+        title: "Error de red",
+        description: "No se pudo conectar con el servidor",
+        variant: "destructive"
+      });
+    }
   };
 
   return (

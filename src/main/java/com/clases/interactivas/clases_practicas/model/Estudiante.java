@@ -8,6 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import com.clases.interactivas.clases_practicas.enums.StatusEnum;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
 
 @Entity
 @Table(name = "estudiante")
@@ -27,15 +30,17 @@ public class Estudiante {
     private String grado;
     @Column(name = "foto_url")
     private String fotoUrl;
-
     @OneToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
     private Usuario usuario;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "estado")
+    private StatusEnum estado;
 
     public Estudiante(){}
 
     public Estudiante(long id, String nombre, String apellido, String telefono, String descripcion, String grado,
-            String fotoUrl, Usuario usuario) {
+            String fotoUrl, Usuario usuario, StatusEnum estado) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -44,6 +49,7 @@ public class Estudiante {
         this.grado = grado;
         this.fotoUrl = fotoUrl;
         this.usuario = usuario;
+        this.estado = estado;
     }
 
     public long getId() {
@@ -110,5 +116,11 @@ public class Estudiante {
         this.usuario = usuario;
     }
 
-    
+    public StatusEnum getEstado() {
+        return estado;
+    }
+
+    public void setEstado(StatusEnum estado) {
+        this.estado = estado;
+    }
 }

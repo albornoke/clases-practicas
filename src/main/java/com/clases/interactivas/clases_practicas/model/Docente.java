@@ -1,13 +1,6 @@
 package com.clases.interactivas.clases_practicas.model;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 
 import java.util.ArrayList; // Asegúrate de importar ArrayList
 import java.util.List;
@@ -28,20 +21,23 @@ public class Docente {
     private String descripcion;
     @Column(name = "foto_url")
     private String fotoUrl;
-
+    @OneToOne
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    private Usuario usuario;
     @OneToMany(mappedBy = "docente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Clase> clases = new ArrayList<>(); 
 
     public Docente(){}
 
-    public Docente(long id, String nombre, String apellido, String telefono, String descripcion, String fotoUrl) {
+    public Docente(long id, String nombre, String apellido, String telefono, String descripcion, String fotoUrl, Usuario usuario) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.descripcion = descripcion;
         this.fotoUrl = fotoUrl;
-        this.clases = new ArrayList<>(); // También inicializar aquí si es necesario
+        this.clases = new ArrayList<>();
+        this.usuario = usuario;
     }
 
     public long getId() {
@@ -99,4 +95,8 @@ public class Docente {
     public void setClases(List<Clase> clases) {
         this.clases = clases;
     }
+
+    public Usuario getUsuario() {return usuario; }
+
+    public void setUsuario (Usuario usuario) {this.usuario = usuario; }
 }

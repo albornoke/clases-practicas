@@ -12,6 +12,8 @@ const AdminRegister = () => {
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
+    telefono: "",
+    descripcion: "",
     correo: "",
     contraseña: ""
   });
