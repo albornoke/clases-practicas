@@ -56,7 +56,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 p-6">
+    <div className="min-h-screen bg-background transition-colors">     
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex justify-between items-center">
@@ -90,22 +90,22 @@ const AdminDashboard = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Link to="/register/teacher">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <Link to="/register/docente">
                 <Button className="w-full h-16 bg-green-600 hover:bg-green-700 text-lg">
-                  <GraduationCap className="h-6 w-6 mr-3" />
+                  <GraduationCap className="h-3 w-3 mr-1" />
                   Agregar Docente
                 </Button>
               </Link>
               <Link to="/register/admin">
                 <Button className="w-full h-16 bg-red-600 hover:bg-red-700 text-lg">
-                  <Shield className="h-6 w-6 mr-3" />
+                  <Shield className="h-3 w-3 mr-1" />
                   Agregar Administrador
                 </Button>
               </Link>
-              <Link to="/register/student">
-                <Button className="w-full h-16 bg-red-600 hover:bg-red-700 text-lg">
-                  <Shield className="h-6 w-6 mr-3" />
+              <Link to="/register/estudiante">
+                <Button className="w-full h-16 bg-blue-600 hover:bg-blue-700 text-lg">
+                  <Shield className="h-3 w-3 mr-1" />
                   Agregar Estudiante
                 </Button>
               </Link>

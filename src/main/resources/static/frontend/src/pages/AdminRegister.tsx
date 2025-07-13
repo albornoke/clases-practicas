@@ -24,13 +24,40 @@ const AdminRegister = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Administrador registrado",
-      description: "La cuenta de administrador ha sido creada correctamente",
-    });
-    navigate("/admin");
+    const data = {
+      email: formData.correo,
+      password: formData.contraseña,
+      rol: "ADMIN"
+    };
+    try {
+      const response = await fetch("/api/usuarios/registro", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      if (response.ok) {
+        toast({
+          title: "Administrador registrado",
+          description: "La cuenta de administrador ha sido creada correctamente",
+        });
+        navigate("/admin");
+      } else {
+        const error = await response.text();
+        toast({
+          title: "Error al registrar administrador",
+          description: error,
+          variant: "destructive"
+        });
+      }
+    } catch (err) {
+      toast({
+        title: "Error de red",
+        description: "No se pudo conectar con el servidor",
+        variant: "destructive"
+      });
+    }
   };
 
   return (

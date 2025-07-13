@@ -16,6 +16,7 @@ const StudentRegister = () => {
     correo: "",
     contraseña: "",
     telefono: "",
+    descripcion: "",
     grado: "",
     foto: null as File | null
   });
@@ -31,13 +32,45 @@ const StudentRegister = () => {
     setFormData(prev => ({ ...prev, foto: file }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Registro exitoso",
-      description: "Tu cuenta de estudiante ha sido creada correctamente",
-    });
-    navigate("/login");
+    try {
+      const form = new FormData();
+      form.append("nombre", formData.nombre);
+      form.append("apellido", formData.apellido);
+      form.append("correo", formData.correo);
+      form.append("contraseña", formData.contraseña);
+      form.append("telefono", formData.telefono);
+      form.append("descripcion", formData.descripcion);
+      form.append("grado", formData.grado);
+      if (formData.foto) {
+        form.append("foto", formData.foto);
+      }
+      const response = await fetch("/api/estudiante/registro", {
+        method: "POST",
+        body: form
+      });
+      if(response.ok){
+        toast({
+          title: "Estudiante registrado",
+          description: "La cuenta del estudiante ha sido creada correctamente",
+        });
+        navigate("/admin");
+      }else{
+        const error = await response.text();
+        toast({
+          title: "Error al registrar al estudiante",
+          description: error,
+          variant: "destructive"
+        });
+      }
+    }catch(err){
+      toast({
+        title: "Error de red",
+        description: "No se pudo conectar con el servidor",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -52,7 +85,6 @@ const StudentRegister = () => {
           <h1 className="text-3xl font-bold text-gray-900">Registro de Estudiante</h1>
           <p className="text-gray-600 mt-2">Crea tu cuenta para comenzar a aprender</p>
         </div>
-
         {/* Registration Form */}
         <Card className="shadow-xl border-0">
           <CardHeader className="text-center pb-4">
@@ -87,7 +119,6 @@ const StudentRegister = () => {
                   />
                 </div>
               </div>
-
               <div className="space-y-2">
                 <Label htmlFor="correo">Correo Electrónico</Label>
                 <Input
@@ -99,7 +130,6 @@ const StudentRegister = () => {
                   required
                 />
               </div>
-
               <div className="space-y-2">
                 <Label htmlFor="contraseña">Contraseña</Label>
                 <Input
@@ -111,7 +141,6 @@ const StudentRegister = () => {
                   required
                 />
               </div>
-
               <div className="space-y-2">
                 <Label htmlFor="telefono">Teléfono</Label>
                 <Input
@@ -123,10 +152,9 @@ const StudentRegister = () => {
                   required
                 />
               </div>
-
               <div className="space-y-2">
                 <Label htmlFor="grado">Grado</Label>
-                <Select onValueChange={(value) => handleInputChange("grado", value)} required>
+                <Select value={formData.grado} onValueChange={(value) => handleInputChange("grado", value)} required>
                   <SelectTrigger>
                     <SelectValue placeholder="Selecciona tu grado" />
                   </SelectTrigger>
@@ -145,7 +173,6 @@ const StudentRegister = () => {
                   </SelectContent>
                 </Select>
               </div>
-
               <div className="space-y-2">
                 <Label htmlFor="foto">Foto de Perfil</Label>
                 <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
@@ -167,25 +194,10 @@ const StudentRegister = () => {
                   </label>
                 </div>
               </div>
-
               <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
                 Crear Cuenta
               </Button>
             </form>
-
-            {/* Footer Links */}
-            <div className="mt-6 text-center space-y-2">
-              <p className="text-sm text-gray-600">
-                ¿Ya tienes cuenta?{" "}
-                <Link to="/login" className="text-primary hover:underline font-medium">
-                  Inicia sesión aquí
-                </Link>
-              </p>
-              <Link to="/" className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center justify-center gap-1">
-                <ArrowLeft className="h-4 w-4" />
-                Volver al inicio
-              </Link>
-            </div>
           </CardContent>
         </Card>
       </div>

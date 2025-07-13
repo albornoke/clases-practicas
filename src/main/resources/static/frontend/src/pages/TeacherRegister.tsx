@@ -33,20 +33,20 @@ const TeacherRegister = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append("nombre", formData.nombre);
-    data.append("apellido", formData.apellido);
-    data.append("correo", formData.correo);
-    data.append("contraseña", formData.contraseña);
-    data.append("telefono", formData.telefono);
-    data.append("descripcion", formData.descripcion);
+    const form = new FormData();
+    form.append("nombre", formData.nombre);
+    form.append("apellido", formData.apellido);
+    form.append("correo", formData.correo);
+    form.append("contraseña", formData.contraseña);
+    form.append("telefono", formData.telefono);
+    form.append("descripcion", formData.descripcion);
     if (formData.foto) {
-      data.append("foto", formData.foto);
+      form.append("foto", formData.foto);
     }
     try {
       const response = await fetch("/api/docente/registro", {
         method: "POST",
-        body: data
+        body: form
       });
       if (response.ok) {
         toast({
