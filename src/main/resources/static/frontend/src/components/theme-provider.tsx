@@ -31,21 +31,25 @@ export function ThemeProvider({
   )
 
   useEffect(() => {
-    const root = window.document.documentElement
-
+    const root = document.documentElement
     root.classList.remove("light", "dark")
 
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light"
-
-      root.classList.add(systemTheme)
-      return
+    const applyTheme = (t: Theme) => {
+      if (t === "system") {
+        const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+        root.classList.add(isDark ? "dark" : "light")
+      } else {
+        root.classList.add(t)
+      }
     }
 
-    root.classList.add(theme)
+    applyTheme(theme)
+    if (theme === "system") {
+      const media = window.matchMedia("(prefers-color-scheme: dark)");
+      const handler = () => applyTheme("system");
+      media.addEventListener("change", handler);
+      return () => media.removeEventListener("change", handler);
+    }
   }, [theme])
 
   const value = {
@@ -65,9 +69,8 @@ export function ThemeProvider({
 
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext)
-
-  if (context === undefined)
+  if (context === undefined) {
     throw new Error("useTheme must be used within a ThemeProvider")
-
+  }
   return context
 }

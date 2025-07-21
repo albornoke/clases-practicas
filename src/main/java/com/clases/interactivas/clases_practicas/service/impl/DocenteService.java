@@ -1,15 +1,13 @@
 package com.clases.interactivas.clases_practicas.service.impl;
 
 import java.util.List;
-
 import com.clases.interactivas.clases_practicas.dto.request.RegistroDocenteRequest;
 import com.clases.interactivas.clases_practicas.model.Usuario;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.clases.interactivas.clases_practicas.model.Docente;
 import com.clases.interactivas.clases_practicas.repository.DocenteRepository;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class DocenteService {
@@ -74,5 +72,28 @@ public class DocenteService {
 
     public List<Docente> findByApellido(String apellido) {
         return docenteRepository.findByApellido(apellido);
+    }
+
+    public String uploadImage(Long id, MultipartFile file) {
+        Docente docente = getDocenteById(id);
+        if (docente == null) {
+            throw new IllegalArgumentException("Docente no encontrado");
+        }
+        if (file == null || file.isEmpty()) {
+            throw new IllegalArgumentException("Archivo vacío");
+        }
+        // Validar tipo de archivo
+        String contentType = file.getContentType();
+        if (contentType == null || !(contentType.equals("image/jpeg") || contentType.equals("image/png") || contentType.equals("image/webp") || contentType.equals("image/avif"))) {
+            throw new IllegalArgumentException("Tipo de archivo no soportado");
+        }
+        // Validar tamaño (máx 2MB)
+        if (file.getSize() > 2 * 1024 * 1024) {
+            throw new IllegalArgumentException("El archivo excede el tamaño máximo de 2MB");
+        }
+        String fotoUrl = fileStorageService.storeFile(file);
+        docente.setFotoUrl(fotoUrl);
+        docenteRepository.save(docente);
+        return contentType;
     }
 }

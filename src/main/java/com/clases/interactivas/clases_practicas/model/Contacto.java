@@ -5,6 +5,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Email;
 
 @Entity
 @Table(name = "contacto")
@@ -12,22 +16,33 @@ public class Contacto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotBlank(message = "El nombre no puede estar vacío")
     @Column(name = "nombre")
     private String nombre;
+    @NotBlank(message = "El correo no puede estar vacío")
+    @Email(message = "El correo debe ser una dirección de email válida")
     @Column(name = "correo")
     private String correo;
+    @NotBlank(message = "El mensaje no puede estar vacío")
     @Column(name = "mensaje")
     private String mensaje;
+    @NotBlank(message = "El teléfono no puede estar vacío")
     @Column(name = "telefono")
     private String telefono;
     @Column(name = "fecha")
     private String fecha;
     @Column(name = "hora")
     private String hora;
+    @NotBlank
+    @Column(name = "asunto")
+    private String asunto;
 
-    public Contacto(){}
+    public Contacto(){
+        this.fecha = LocalDate.now().toString();
+        this.hora = LocalTime.now().toString();
+    }
 
-    public Contacto(long id, String nombre, String correo, String mensaje, String telefono, String fecha, String hora) {
+    public Contacto(long id, String nombre, String correo, String mensaje, String telefono, String fecha, String hora, String asunto) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
@@ -35,6 +50,7 @@ public class Contacto {
         this.telefono = telefono;
         this.fecha = fecha;
         this.hora = hora;
+        this.asunto = asunto;
     }
 
     public long getId() {
@@ -92,6 +108,10 @@ public class Contacto {
     public void setHora(String hora) {
         this.hora = hora;
     }
+
+    public  String getAsunto() {return asunto; }
+
+    public void setAsunto(String asunto) {this.asunto = asunto; }
 
     
     

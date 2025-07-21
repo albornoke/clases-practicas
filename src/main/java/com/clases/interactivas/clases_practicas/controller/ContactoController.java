@@ -2,6 +2,9 @@ package com.clases.interactivas.clases_practicas.controller;
 
 import com.clases.interactivas.clases_practicas.model.Contacto;
 import com.clases.interactivas.clases_practicas.service.impl.ContactoService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -11,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/contacto")
-@CrossOrigin(origins = "http://localhost:5173") // Considera restringir los orígenes en producción
+@CrossOrigin(origins = "http://localhost:5173")
 @Validated
 public class ContactoController {
 
@@ -29,9 +32,10 @@ public class ContactoController {
         return contacto != null ? ResponseEntity.ok(contacto) : ResponseEntity.notFound().build();
     }
 
-    @PostMapping
-    public Contacto createContacto(@RequestBody Contacto contacto) {
-        return contactoService.createContacto(contacto);
+    @PostMapping 
+    public ResponseEntity<?> createContacto(@Valid @RequestBody Contacto contacto) {
+        Contacto savedContacto = contactoService.createContacto(contacto);
+        return ResponseEntity.ok(savedContacto);
     }
 
     @PutMapping("/{id}")
@@ -52,7 +56,11 @@ public class ContactoController {
     }
 
     @GetMapping("/telefono/{telefono}")
-    public List<Contacto> findByTelefono(@PathVariable String telefono) {
-        return contactoService.findByTelefono(telefono);
-    }
+    public List<Contacto> findByTelefono(@PathVariable String telefono) { return contactoService.findByTelefono(telefono); }
+
+    @GetMapping("/asunto/{asunto}")
+    public  List<Contacto> findByAsunto(@PathVariable String asunto) { return contactoService.findByAsunto(asunto); }
+
+    @GetMapping("/mensaje/{mensaje}")
+    public List<Contacto> findByMensaje(@PathVariable String mensaje) { return contactoService.findByMensaje(mensaje); }
 }

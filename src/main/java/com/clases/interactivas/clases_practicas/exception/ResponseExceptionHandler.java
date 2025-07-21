@@ -2,7 +2,15 @@ package com.clases.interactivas.clases_practicas.exception;
 
 import com.clases.interactivas.clases_practicas.dto.response.*;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -21,7 +29,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
     @Autowired
     private HttpServletRequest httpServletRequest;
 
-    // Error 204 - No Content
+    // Error 204 - No contenido
     @org.springframework.web.bind.annotation.ExceptionHandler(Exception204.class)
     public ResponseEntity<ApiResponse204> handlerError204(HttpServletRequest request, Exception204 ex) {
         log.warn("Error 204: {}", ex.getMessage(), ex);
@@ -41,7 +49,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
-    // Error 409 - Conflict
+    // Error 409 - Conflicto
     @org.springframework.web.bind.annotation.ExceptionHandler(Exception409.class)
     public ResponseEntity<ApiResponse409> handlerError409(HttpServletRequest request, Exception409 ex) {
         log.warn("Error 409: {}", ex.getMessage(), ex);
@@ -51,7 +59,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.CONFLICT);
     }
 
-    // Error 424 - Failed Dependency
+    // Error 424 - Fallo dependencia
     @org.springframework.web.bind.annotation.ExceptionHandler(Exception424.class)
     public ResponseEntity<ApiResponse424> handlerError424(HttpServletRequest request, Exception424 ex) {
         log.error("Error 424: {}", ex.getMessage(), ex);
@@ -70,17 +78,37 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
             WebRequest request) {
         ApiResponse400 response = new ApiResponse400();
         response.setCode(HttpStatus.BAD_REQUEST.value());
-        StringBuilder sb = new StringBuilder();
+        List<Map<String, String>> errors = new ArrayList<>();
         for (FieldError error : ex.getBindingResult().getFieldErrors()) {
-            sb.append("Campo '")
-            .append(error.getField())
-            .append("': ")
-            .append(error.getDefaultMessage())
-            .append("\n");
-        }
-        response.setMessage(sb.toString().trim());
-        return handleExceptionInternal(ex, response, headers, HttpStatus.BAD_REQUEST, request);
+            Map<String, String> errorObj = new HashMap<>();
+            errorObj.put("field", error.getField());
+            errorObj.put("message", error.getDefaultMessage());
+            errors.add(errorObj);
+        }        
+        Map<String, Object> body = new HashMap<>();
+        body.put("code", response.getCode());
+        body.put("errors", errors);
+        return handleExceptionInternal(ex, body, headers, HttpStatus.BAD_REQUEST, request);
     }
 
 
+    @org.springframework.web.bind.annotation.ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException ex) {
+        List<Map<String, String>> errors = new ArrayList<>();
+        for (ConstraintViolation<?> violation : ex.getConstraintViolations()) {
+            Map<String, String> errorObj = new HashMap<>();
+            // Extrae el nombre del campo (última parte del path)
+            String field = violation.getPropertyPath().toString();
+            if (field.contains(".")) {
+                field = field.substring(field.lastIndexOf('.') + 1);
+            }
+            errorObj.put("field", field);
+            errorObj.put("message", violation.getMessage());
+            errors.add(errorObj);
+        }
+        Map<String, Object> body = new HashMap<>();
+        body.put("code", HttpStatus.BAD_REQUEST.value());
+        body.put("errors", errors);
+        return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+    }
 }

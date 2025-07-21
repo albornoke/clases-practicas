@@ -12,25 +12,22 @@ export const Contact = () => {
   const [formData, setFormData] = useState({
     nombre: "",
     correo: "",
+    mensaje: "",
     telefono: "",
-    subject: "",
-    mensaje: ""
+    asunto: ""    
   });
   const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => { // Make handleSubmit async
+  const handleSubmit = async (e: React.FormEvent) => { 
     e.preventDefault();
-    try {
-      const dataToSend = {
-        ...formData,
-        fechaContacto: new Date().toISOString(), // Add current date and time
-      };
-      await apiClient.post('/api/contacto', dataToSend);
+    const dataToSend = { ...formData };
+    try {      
+      await apiClient.post('/api/contacto');
       toast({
         title: "Mensaje enviado",
-        description: "Te contactaré pronto para coordinar una consulta gratuita.",
+        description: "Te contactaré pronto para coordinar una consulta.",
       });
-      setFormData({ nombre: "", correo: "", telefono: "", subject: "", mensaje: "" });
+      setFormData({ nombre: "", correo: "", telefono: "", mensaje: "", asunto: "" });
     } catch (error) {
       console.error("Error sending message:", error);
       toast({
@@ -140,7 +137,7 @@ export const Contact = () => {
                       </label>
                       <Input
                         id="name"
-                        name="name"
+                        name="nombre"
                         value={formData.nombre}
                         onChange={handleChange}
                         placeholder="Tu nombre"
@@ -153,7 +150,7 @@ export const Contact = () => {
                       </label>
                       <Input
                         id="email"
-                        name="email"
+                        name="correo"
                         type="email"
                         value={formData.correo}
                         onChange={handleChange}
@@ -170,7 +167,7 @@ export const Contact = () => {
                       </label>
                       <Input
                         id="phone"
-                        name="phone"
+                        name="telefono"
                         value={formData.telefono}
                         onChange={handleChange}
                         placeholder="+1 (555) 123-4567"
@@ -182,12 +179,11 @@ export const Contact = () => {
                       </label>
                       <Input
                         id="subject"
-                        name="subject"
-                        value={formData.subject}
+                        name="asunto"
+                        value={formData.asunto}
                         onChange={handleChange}
-                        placeholder="Clases de matemáticas"
-                        required
-                      />
+                        placeholder="Asunto de tu consulta"                  
+                      />                      
                     </div>
                   </div>
 
@@ -197,7 +193,7 @@ export const Contact = () => {
                     </label>
                     <Textarea
                       id="message"
-                      name="message"
+                      name="mensaje"
                       value={formData.mensaje}
                       onChange={handleChange}
                       placeholder="Cuéntame sobre las necesidades específicas, edad del estudiante, materias de interés, etc."

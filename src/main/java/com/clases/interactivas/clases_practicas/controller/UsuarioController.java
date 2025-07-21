@@ -6,6 +6,8 @@ import com.clases.interactivas.clases_practicas.dto.request.LoginRequest;
 import com.clases.interactivas.clases_practicas.dto.response.LoginResponseDto; // Asegúrate de importar LoginResponse
 import com.clases.interactivas.clases_practicas.security.JwtTokenProvider; // Asegúrate de importar JwtTokenProvider
 
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
 import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -76,12 +79,27 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.obtenerPorRol(rol));
     }
 
-    @GetMapping("/me")
-    public ResponseEntity<Usuario> obtenerPerfil(@RequestHeader("Authorization") String authHeader) {
-        String token = authHeader.replace("Bearer ", "");
-        String email = tokenProvider.getEmailFromToken(token);
-        Usuario usuario = usuarioService.obtenerPorEmail(email)
-            .orElseThrow(() -> new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Usuario no encontrado"));
-        return ResponseEntity.ok(usuario);
+    @GetMapping("/perfil")
+    public ResponseEntity<?> obtenerPerfil(@RequestHeader("Authorization") String authHeader) {
+        try {
+            // Verificar formato del token
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+                return ResponseEntity.status(HttpStatus.SC_UNAUTHORIZED).build();
+            }
+            String token = authHeader.substring(7);
+            // Validar token
+            if (!tokenProvider.validateToken(token)) {
+                return ResponseEntity.status(HttpStatus.SC_UNAUTHORIZED).build();
+            }
+            // Obtener email del token
+            String email = tokenProvider.getEmailFromToken(token);
+            Usuario usuario = usuarioService.obtenerPorEmail(email)
+                    .orElseThrow(() -> new ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Usuario no encontrado"));
+            return ResponseEntity.ok(usuario);
+        } catch (ExpiredJwtException ex) {
+            return ResponseEntity.status(HttpStatus.SC_UNAUTHORIZED).body("Token expirado");
+        } catch (JwtException | IllegalArgumentException ex) {
+            return ResponseEntity.status(HttpStatus.SC_UNAUTHORIZED).body("Token inválido");
+        }
     }
 }

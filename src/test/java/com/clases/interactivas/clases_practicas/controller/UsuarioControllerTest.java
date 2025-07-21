@@ -6,6 +6,7 @@ import com.clases.interactivas.clases_practicas.security.CustomUserDetailsServic
 import com.clases.interactivas.clases_practicas.security.JwtAuthenticationFilter;
 import com.clases.interactivas.clases_practicas.security.JwtTokenProvider;
 import com.clases.interactivas.clases_practicas.service.impl.UsuarioService;
+import io.jsonwebtoken.ExpiredJwtException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -190,4 +191,38 @@ public class UsuarioControllerTest {
 
         verify(usuarioService).eliminarUsuario(1L);
     }
+
+    @Test
+    @DisplayName("Debería devolver 401 cuando el token JWT es inválido")
+    void testAccesoConJwtInvalido() throws Exception {
+        when(jwtTokenProvider.validateToken("token_invalido")).thenReturn(false);
+
+        mockMvc.perform(get("/api/usuarios/perfil")
+                        .header("Authorization", "Bearer token_invalido"))
+                .andExpect(status().isUnauthorized());
+    }
+
+    @Test
+    @DisplayName("Debería devolver 401 cuando el token JWT está expirado")
+    void testAccesoConJwtExpirado() throws Exception {
+        when(jwtTokenProvider.validateToken("token_expirado"))
+                .thenThrow(new ExpiredJwtException(null, null, "Token expirado"));
+
+        mockMvc.perform(get("/api/usuarios/perfil")
+                        .header("Authorization", "Bearer token_expirado"))
+                .andExpect(status().isUnauthorized());
+    }
+
+    @Test
+    @DisplayName("Debería devolver 404 cuando el token es válido pero el usuario no existe")
+    void testAccesoConTokenValidoPeroUsuarioNoExiste() throws Exception {
+        when(jwtTokenProvider.validateToken("token_valido")).thenReturn(true);
+        when(jwtTokenProvider.getEmailFromToken("token_valido")).thenReturn("noexiste@example.com");
+        when(usuarioService.obtenerPorEmail("noexiste@example.com")).thenReturn(Optional.empty());
+
+        mockMvc.perform(get("/api/usuarios/perfil")
+                        .header("Authorization", "Bearer token_valido"))
+                .andExpect(status().isNotFound());
+    }
+
 }

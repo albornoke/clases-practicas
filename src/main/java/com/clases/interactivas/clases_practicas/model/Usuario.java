@@ -19,7 +19,7 @@ public class Usuario {
     @Column(name = "password", nullable = false)
     private String password; // Debe estar encriptada (ej: BCrypt)
     @Column(name = "rol", nullable = false)
-    private String rol;      // Valores posibles: "DOCENTE", "ESTUDIANTE", "ADMIN"
+    private String rol;      //  "DOCENTE", "ESTUDIANTE", "ADMIN"
     @OneToOne(mappedBy = "usuario")
     private Docente docente;
 

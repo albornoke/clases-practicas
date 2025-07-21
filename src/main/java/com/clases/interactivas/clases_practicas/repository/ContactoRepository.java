@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ContactoRepository extends JpaRepository<Contacto, Long> {
+    List<Contacto> findByNombre(String nombre);
     List<Contacto> findByCorreo(String correo);
     List<Contacto> findByTelefono(String telefono);
+    List<Contacto> findByMensaje(String mensaje);
+    List<Contacto> findByAsunto(String asunto);
+
 }

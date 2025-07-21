@@ -118,12 +118,6 @@ const Login = () => {
             {/* Footer Links */}
             <div className="mt-6 text-center space-y-2">
               <p className="text-sm text-gray-600">
-                ¿Eres estudiante y no tienes cuenta?{" "}
-                <Link to="/register/student" className="text-primary hover:underline font-medium">
-                  Regístrate aquí
-                </Link>
-              </p>
-              <p className="text-sm text-gray-600">
                 <a href="#" className="text-primary hover:underline">
                   ¿Olvidaste tu contraseña?
                 </a>

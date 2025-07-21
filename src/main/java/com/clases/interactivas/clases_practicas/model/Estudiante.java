@@ -11,6 +11,8 @@ import jakarta.persistence.Table;
 import com.clases.interactivas.clases_practicas.enums.StatusEnum;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "estudiante")
@@ -18,16 +20,24 @@ public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotBlank(message = "El nombre no puede estar vacío")
     @Column(name = "nombre")
     private String nombre;
+    @NotBlank(message = "El apellido no puede estar vacío")
     @Column(name = "apellido")
     private String apellido;
+    @NotBlank(message = "El telefono no puede estar vacío")
     @Column(name = "telefono")
     private String telefono;
-    @Column(name = "descripcion")
-    private String descripcion;
+    @NotBlank(message = "El grado no puede estar vacío")
     @Column(name = "grado")
     private String grado;
+    @NotBlank(message = "El correo no puede estar vacío")
+    @Email(message = "El correo debe ser válido")
+    @Column(name = "correo")
+    private String correo;
+    @Column(name = "descripcion")
+    private String descripcion;
     @Column(name = "foto_url")
     private String fotoUrl;
     @OneToOne

@@ -50,7 +50,7 @@ public class EstudianteController {
     }
 
     @PostMapping
-    public Estudiante createEstudiante(@RequestBody Estudiante estudiante) {        
+    public Estudiante createEstudiante(@Valid @RequestBody Estudiante estudiante) {
         return estudianteService.createEstudiante(estudiante);
     }
 

@@ -10,6 +10,7 @@ import com.clases.interactivas.clases_practicas.service.impl.UsuarioService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.lang.Collections;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -80,13 +81,15 @@ public class EstudianteControllerTest {
     }
 
     @Test
-    void testCreateEstudiante() throws Exception{
-        when(estudianteService.createEstudiante(any(Estudiante.class))).thenReturn(testEstudiante);
+    void testCreateEstudiante_ValidationError() throws Exception {
+        Estudiante estudianteInvalido = new Estudiante();
+        estudianteInvalido.setNombre("Juan");
         mockMvc.perform(post("/api/estudiante")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(new ObjectMapper().writeValueAsString(testEstudiante)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(testEstudiante.getId()));
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(estudianteInvalido)))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errors").isArray())
+                .andExpect(jsonPath("$.errors[?(@.field=='correo' && @.message=='El correo no puede estar vacío')]").exists());
     }
 
     @Test   
@@ -182,18 +185,20 @@ public class EstudianteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería devolver errores de validación cuando los campos requeridos están vacíos")
     void registrarEstudiante_validationError() throws Exception {
-        // Simula un error de validación: nombre vacío
-        mockMvc.perform(multipart("/api/estudiante/registro")
-                .file((MockMultipartFile) registroEstudianteRequest.getFoto())
-                .param("nombre", "")
-                .param("apellido", registroEstudianteRequest.getApellido())
-                .param("telefono", registroEstudianteRequest.getTelefono())
-                .param("descripcion", registroEstudianteRequest.getDescripcion())
-                .param("grado", registroEstudianteRequest.getGrado())
-                .param("correo", registroEstudianteRequest.getCorreo())
-                .param("contraseña", registroEstudianteRequest.getContraseña())
-        )
-        .andExpect(status().isBadRequest());
+        String estudianteJson = "{\"nombre\":\"\",\"apellido\":\"\",\"telefono\":\"\",\"grado\":\"\",\"correo\":\"\"}";
+
+        mockMvc.perform(post("/api/estudiante")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(estudianteJson))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.errors").isArray())
+                // Verificar cada campo requerido individualmente
+                .andExpect(jsonPath("$.errors[?(@.field=='nombre' && @.message =~ /.*vac[ií]o.*/)]").exists())
+                .andExpect(jsonPath("$.errors[?(@.field=='apellido')]").exists())
+                .andExpect(jsonPath("$.errors[?(@.field=='telefono')]").exists())
+                .andExpect(jsonPath("$.errors[?(@.field=='grado')]").exists())
+                .andExpect(jsonPath("$.errors[?(@.field=='correo')]").exists());
     }
 }

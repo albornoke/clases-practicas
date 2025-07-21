@@ -16,10 +16,13 @@ import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServic
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
+
 import java.util.Collections;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -45,6 +48,7 @@ class DocenteControllerTest {
     private JwtTokenProvider jwtTokenProvider;
     @MockBean
     private CustomUserDetailsService userDetailsService;
+
 
     private Docente testDocente;
     private Usuario testUsuario;
@@ -180,15 +184,44 @@ class DocenteControllerTest {
     void registrarDocente_ValidationError() throws Exception {
         registroDocenteRequest.setNombre("");
         mockMvc.perform(MockMvcRequestBuilders.multipart("/api/docente/registro")
-                        .file((MockMultipartFile) registroDocenteRequest.getFoto())
-                        .param("nombre", registroDocenteRequest.getNombre())
-                        .param("apellido", registroDocenteRequest.getApellido())
-                        .param("telefono", registroDocenteRequest.getTelefono())
-                        .param("descripcion", registroDocenteRequest.getDescripcion())
-                        .param("correo", registroDocenteRequest.getCorreo())
-                        .param("contraseña", registroDocenteRequest.getContraseña())
-                        .contentType(MediaType.MULTIPART_FORM_DATA))
+                .file((MockMultipartFile) registroDocenteRequest.getFoto())
+                .param("nombre", registroDocenteRequest.getNombre())
+                .param("apellido", registroDocenteRequest.getApellido())
+                .param("telefono", registroDocenteRequest.getTelefono())
+                .param("descripcion", registroDocenteRequest.getDescripcion())
+                .param("correo", registroDocenteRequest.getCorreo())
+                .param("contraseña", registroDocenteRequest.getContraseña())
+                .contentType(MediaType.MULTIPART_FORM_DATA))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.message").value("Campo 'nombre': El nombre no puede estar vacio"));
+                .andExpect(jsonPath("$.errors").isArray())
+                .andExpect(jsonPath("$.errors[?(@.field=='nombre' && @.message=='El nombre no puede estar vacío')]").exists());
     }
+    
+    @Test
+    void testUploadImage_invalidType() throws Exception {
+        MockMultipartFile file = new MockMultipartFile(
+                "file", // debe coincidir con @RequestParam
+                "test.txt",
+                "text/plain",
+                "contenido de texto".getBytes());
+        mockMvc.perform(multipart("/api/docente/upload-image/1")
+                        .file(file))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.message").value("Solo se permiten archivos de imagen"));
+    }
+
+    @Test
+    void testUploadImage_tooLarge() throws Exception {
+        byte[] largeContent = new byte[2 * 1024 * 1024]; // 2MB
+        MockMultipartFile file = new MockMultipartFile(
+                "file",
+                "large.jpg",
+                "image/jpeg",
+                largeContent);
+        mockMvc.perform(multipart("/api/docente/upload-image/1")
+                        .file(file))
+                .andExpect(status().isPayloadTooLarge())
+                .andExpect(jsonPath("$.message").value("El archivo excede el tamaño máximo permitido (1MB)"));
+    }
+
 }
