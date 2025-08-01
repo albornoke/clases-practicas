@@ -81,6 +81,7 @@ public class EstudianteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería devolver error de validación al crear estudiante con datos inválidos")
     void testCreateEstudiante_ValidationError() throws Exception {
         Estudiante estudianteInvalido = new Estudiante();
         estudianteInvalido.setNombre("Juan");
@@ -92,7 +93,8 @@ public class EstudianteControllerTest {
                 .andExpect(jsonPath("$.errors[?(@.field=='correo' && @.message=='El correo no puede estar vacío')]").exists());
     }
 
-    @Test   
+    @Test
+    @DisplayName("Debería eliminar un estudiante exitosamente")
     void testDeleteEstudiante() throws Exception{
         doNothing().when(estudianteService).deleteEstudiante(1L);
         mockMvc.perform(delete("/api/estudiante/{id}", 1L))
@@ -100,6 +102,7 @@ public class EstudianteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería buscar estudiantes por apellido")
     void testFindByApellido() throws Exception {
         when(estudianteService.findByApellido("Mina")).thenReturn(Arrays.asList(testEstudiante));
         mockMvc.perform(get("/api/estudiante/seach/apellido/{apellido}", "Mina")
@@ -109,6 +112,7 @@ public class EstudianteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería buscar estudiantes por nombre")
     void testFindByNombre() throws Exception{
         when(estudianteService.findByNombre("Scartt")).thenReturn(Arrays.asList(testEstudiante));
         mockMvc.perform(get("/api/estudiante/seach/nombre/{nombre}", "Scartt")
@@ -118,6 +122,7 @@ public class EstudianteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería obtener todos los estudiantes")
     void testGetAllEstudiantes() throws Exception{
         when(estudianteService.getAllEstudiantes()).thenReturn(Arrays.asList(testEstudiante));
         mockMvc.perform(get("/api/estudiante")
@@ -128,6 +133,7 @@ public class EstudianteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería obtener estudiante por ID")
     void testGetEstudianteById() throws Exception{
         when(estudianteService.getEstudianteById(1L)).thenReturn(testEstudiante);
         mockMvc.perform(get("/api/estudiante/{id}", 1L)
@@ -137,6 +143,7 @@ public class EstudianteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería obtener estudiantes en línea")
     void testGetEstudiantesOnline() throws Exception {
         Estudiante online = new Estudiante();
         online.setEstado(StatusEnum.ONLINE);
@@ -149,6 +156,7 @@ public class EstudianteControllerTest {
     }
     
     @Test
+    @DisplayName("Debería actualizar un estudiante exitosamente")
     void testUpdateEstudiante() throws Exception{
        Estudiante updateEstudiante = new Estudiante();
        updateEstudiante.setId(1L);
@@ -168,6 +176,7 @@ public class EstudianteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería registrar un estudiante exitosamente")
     void registrarEstudiante() throws Exception {
         when(estudianteService.createEstudiante(any(RegistroEstudianteRequest.class))).thenReturn(testEstudiante);
         mockMvc.perform(multipart("/api/estudiante/registro")

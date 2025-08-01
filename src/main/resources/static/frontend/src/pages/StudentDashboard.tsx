@@ -74,8 +74,8 @@ const StudentDashboard = () => {
         {/* Header */}
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Mi Portal Estudiantil</h1>
-            <p className="text-gray-600">Hola Juan, ¡continuemos aprendiendo!</p>
+            <h1 className="text-3xl font-bold text-foreground">Mi Portal Estudiantil</h1>
+            <p className="text-muted-foreground">Hola Juan, ¡continuemos aprendiendo!</p>
           </div>
           <div className="flex gap-2">
             <Button className="bg-green-600 hover:bg-green-700">
@@ -154,7 +154,7 @@ const StudentDashboard = () => {
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <h4 className="font-medium">{materia.nombre}</h4>
-                        <p className="text-sm text-gray-500">{materia.profesor}</p>
+                        <p className="text-sm text-muted-foreground">{materia.profesor}</p>
                       </div>
                       <Badge variant="outline">{materia.tareasPendientes} tareas</Badge>
                     </div>
@@ -165,7 +165,7 @@ const StudentDashboard = () => {
                       </div>
                       <Progress value={materia.progreso} className="h-2" />
                     </div>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground">
                       Próxima clase: {materia.proximaClase}
                     </p>
                   </div>
@@ -183,13 +183,13 @@ const StudentDashboard = () => {
             <CardContent>
               <div className="space-y-3">
                 {horarioSemana.map((clase, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <div key={index} className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
                     <div className="flex items-center space-x-3">
                       <div className="text-sm font-medium w-16">{clase.dia}</div>
                       <div className="text-sm font-mono">{clase.hora}</div>
                       <div>
                         <p className="font-medium text-sm">{clase.materia}</p>
-                        <p className="text-xs text-gray-500">{clase.profesor}</p>
+                        <p className="text-xs text-muted-foreground">{clase.profesor}</p>
                       </div>
                     </div>
                     <Badge variant={clase.tipo === "Virtual" ? "default" : "secondary"}>
@@ -215,13 +215,13 @@ const StudentDashboard = () => {
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="font-medium">{materia.nombre}</h4>
-                      <p className="text-sm text-gray-500">{materia.profesor}</p>
+                      <p className="text-sm text-muted-foreground">{materia.profesor}</p>
                     </div>
                     <Badge variant="default" className="bg-green-100 text-green-800">
                       {materia.calificacion}%
                     </Badge>
                   </div>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-muted-foreground">
                     Finalizada: {materia.fechaFinalizacion}
                   </p>
                 </div>

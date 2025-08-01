@@ -73,13 +73,13 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contacto" className="py-20 bg-gray-50">
+    <section id="contacto" className="py-20 bg-muted/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
             ¿Listo para Comenzar?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Contáctame para una consulta gratuita y descubre cómo puedo ayudar en el crecimiento académico
           </p>
         </div>
@@ -88,8 +88,8 @@ export const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-gray-900">Información de Contacto</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold text-foreground">Información de Contacto</h3>
+              <p className="text-muted-foreground">
                 Estoy aquí para responder todas tus preguntas y ayudarte a encontrar la mejor solución educativa.
               </p>
             </div>
@@ -101,20 +101,20 @@ export const Contact = () => {
                     <info.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">{info.title}</h4>
-                    <p className="text-gray-700">{info.value}</p>
-                    <p className="text-sm text-gray-500">{info.description}</p>
+                    <h4 className="font-semibold text-foreground">{info.title}</h4>
+                    <p className="text-muted-foreground">{info.value}</p>
+                    <p className="text-sm text-muted-foreground/70">{info.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6">
+            <div className="bg-muted/30 rounded-2xl p-6 border">
               <div className="flex items-center space-x-3 mb-4">
-                <MessageCircle className="h-6 w-6 text-blue-600" />
-                <h4 className="font-semibold text-gray-900">Consulta Gratuita</h4>
+                <MessageCircle className="h-6 w-6 text-primary" />
+                <h4 className="font-semibold text-foreground">Consulta Gratuita</h4>
               </div>
-              <p className="text-gray-600 text-sm">
+              <p className="text-muted-foreground text-sm">
                 Agenda una sesión de 30 minutos sin costo para conocer mis métodos y evaluar las necesidades específicas.
               </p>
             </div>
@@ -122,9 +122,9 @@ export const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="border-0 shadow-lg">
+            <Card className="border shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-gray-900">
+                <CardTitle className="text-2xl font-bold text-foreground">
                   Envíame un Mensaje
                 </CardTitle>
               </CardHeader>
@@ -132,7 +132,7 @@ export const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-gray-700">
+                      <label htmlFor="name" className="text-sm font-medium text-foreground">
                         Nombre Completo *
                       </label>
                       <Input
@@ -145,7 +145,7 @@ export const Contact = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                      <label htmlFor="email" className="text-sm font-medium text-foreground">
                         Email *
                       </label>
                       <Input
@@ -162,7 +162,7 @@ export const Contact = () => {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-medium text-gray-700">
+                      <label htmlFor="phone" className="text-sm font-medium text-foreground">
                         Teléfono
                       </label>
                       <Input
@@ -174,7 +174,7 @@ export const Contact = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="subject" className="text-sm font-medium text-gray-700">
+                      <label htmlFor="subject" className="text-sm font-medium text-foreground">
                         Asunto *
                       </label>
                       <Input
@@ -188,7 +188,7 @@ export const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium text-gray-700">
+                    <label htmlFor="message" className="text-sm font-medium text-foreground">
                       Mensaje *
                     </label>
                     <Textarea

@@ -9,8 +9,10 @@ import { Link } from "react-router-dom";
 import { ReportDetailsModal } from "@/components/ReportDetailsModal";
 import { GenerateReportModal } from "@/components/GenerateReportModal";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 const AdminDashboard = () => {
+  const { logout } = useAuth();
   const [selectedReport, setSelectedReport] = useState<any>(null);
   const [showReportDetails, setShowReportDetails] = useState(false);
   const [showGenerateReport, setShowGenerateReport] = useState(false);
@@ -61,20 +63,18 @@ const AdminDashboard = () => {
         {/* Header */}
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Panel de Administración</h1>
-            <p className="text-gray-600">Vista general del sistema educativo</p>
+            <h1 className="text-3xl font-bold text-foreground">Panel de Administración</h1>
+            <p className="text-muted-foreground">Vista general del sistema educativo</p>
           </div>
           <div className="flex gap-2">
             <Button onClick={handleGenerateReport} className="bg-blue-600 hover:bg-blue-700">
               <FileText className="h-4 w-4 mr-2" />
               Generar Reporte
             </Button>
-            <Link to="/login">
-              <Button variant="outline">
-                <LogOut className="h-4 w-4 mr-2" />
-                Salir
-              </Button>
-            </Link>
+            <Button variant="outline" onClick={logout}>
+              <LogOut className="h-4 w-4 mr-2" />
+              Salir
+            </Button>
           </div>
         </div>
 

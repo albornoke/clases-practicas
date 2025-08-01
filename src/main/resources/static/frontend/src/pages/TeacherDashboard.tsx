@@ -9,8 +9,10 @@ import { ReviewAssignmentModal } from "@/components/ReviewAssignmentModal";
 import { GradeAssignmentModal } from "@/components/GradeAssignmentModal";
 import { useState } from "react";
 import OnlineStudentsList from "../components/OnlineStudentsList";
+import { useAuth } from "@/hooks/useAuth";
 
 const TeacherDashboard = () => {
+  const { logout } = useAuth();
   const [selectedAssignment, setSelectedAssignment] = useState<any>(null);
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [showGradeModal, setShowGradeModal] = useState(false);
@@ -61,8 +63,8 @@ const TeacherDashboard = () => {
         {/* Header */}
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Panel del Docente</h1>
-            <p className="text-gray-600">Bienvenida, Profesora María</p>
+            <h1 className="text-3xl font-bold text-foreground">Panel del Docente</h1>
+            <p className="text-muted-foreground">Bienvenida, Profesora María</p>
           </div>
           <div className="flex gap-2">
             <Button className="bg-purple-600 hover:bg-purple-700">
@@ -73,12 +75,10 @@ const TeacherDashboard = () => {
               <Calendar className="h-4 w-4 mr-2" />
               Ver Calendario
             </Button>
-            <Link to="/login">
-              <Button variant="outline">
-                <LogOut className="h-4 w-4 mr-2" />
-                Salir
-              </Button>
-            </Link>
+            <Button variant="outline" onClick={logout}>
+              <LogOut className="h-4 w-4 mr-2" />
+              Salir
+            </Button>
           </div>
         </div>
 
@@ -160,7 +160,7 @@ const TeacherDashboard = () => {
                       <div className="text-sm font-mono">{clase.hora}</div>
                       <div>
                         <p className="font-medium text-sm">{clase.materia}</p>
-                        <p className="text-xs text-gray-500">{clase.estudiante}</p>
+                        <p className="text-xs text-muted-foreground">{clase.estudiante}</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-2">

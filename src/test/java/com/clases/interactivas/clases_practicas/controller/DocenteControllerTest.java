@@ -9,6 +9,7 @@ import com.clases.interactivas.clases_practicas.service.impl.DocenteService;
 import com.clases.interactivas.clases_practicas.service.impl.UsuarioService; // Importar UsuarioService
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -83,6 +84,7 @@ class DocenteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería obtener todos los docentes")
     void getAllDocentes() throws Exception {
         when(docenteService.getAllDocentes()).thenReturn(Collections.singletonList(testDocente));
         mockMvc.perform(get("/api/docente")
@@ -92,6 +94,7 @@ class DocenteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería obtener docente por ID")
     void getDocenteById() throws Exception {
         when(docenteService.getDocenteById(1L)).thenReturn(testDocente);
         mockMvc.perform(get("/api/docente/{id}", 1L)
@@ -101,6 +104,7 @@ class DocenteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería devolver 404 cuando el docente no existe")
     void getDocenteByIdNotFound() throws Exception {
         when(docenteService.getDocenteById(1L)).thenReturn(null);
         mockMvc.perform(get("/api/docente/{id}", 1L)
@@ -109,6 +113,7 @@ class DocenteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería crear un docente exitosamente")
     void createDocente() throws Exception {
         when(docenteService.createDocente(any(Docente.class))).thenReturn(testDocente);
         mockMvc.perform(post("/api/docente")
@@ -119,6 +124,7 @@ class DocenteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería actualizar un docente exitosamente")
     void updateDocente() throws Exception {
         Docente updatedDocente = new Docente();
         updatedDocente.setId(1L);
@@ -139,6 +145,7 @@ class DocenteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería eliminar un docente exitosamente")
     void deleteDocente() throws Exception {
         doNothing().when(docenteService).deleteDocente(1L);
         mockMvc.perform(delete("/api/docente/{id}", 1L))
@@ -146,6 +153,7 @@ class DocenteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería registrar un docente exitosamente")
     void registrarDocente_Success() throws Exception {
         Docente expectedDocente = new Docente();
         expectedDocente.setId(2L);
@@ -181,6 +189,7 @@ class DocenteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería devolver error de validación al registrar docente")
     void registrarDocente_ValidationError() throws Exception {
         registroDocenteRequest.setNombre("");
         mockMvc.perform(MockMvcRequestBuilders.multipart("/api/docente/registro")
@@ -198,6 +207,7 @@ class DocenteControllerTest {
     }
     
     @Test
+    @DisplayName("Debería rechazar imagen con tipo inválido")
     void testUploadImage_invalidType() throws Exception {
         MockMultipartFile file = new MockMultipartFile(
                 "file", // debe coincidir con @RequestParam
@@ -211,6 +221,7 @@ class DocenteControllerTest {
     }
 
     @Test
+    @DisplayName("Debería rechazar imagen demasiado grande")
     void testUploadImage_tooLarge() throws Exception {
         byte[] largeContent = new byte[2 * 1024 * 1024]; // 2MB
         MockMultipartFile file = new MockMultipartFile(

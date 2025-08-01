@@ -47,18 +47,18 @@ export const Hero = () => {
               </Button>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
+            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">100+</div>
-                <div className="text-sm text-gray-600">Estudiantes</div>
+                <div className="text-2xl font-bold text-foreground">100+</div>
+                <div className="text-sm text-muted-foreground">Estudiantes</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">5+</div>
-                <div className="text-sm text-gray-600">Años Experiencia</div>
+                <div className="text-2xl font-bold text-foreground">5+</div>
+                <div className="text-sm text-muted-foreground">Años Experiencia</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">98%</div>
-                <div className="text-sm text-gray-600">Satisfacción</div>
+                <div className="text-2xl font-bold text-foreground">98%</div>
+                <div className="text-sm text-muted-foreground">Satisfacción</div>
               </div>
             </div>
           </div>
@@ -66,33 +66,33 @@ export const Hero = () => {
           {/* Image/Visual */}
           <div className="relative">
             <div className="relative bg-gradient-to-br from-blue-400 to-purple-500 rounded-3xl p-8 shadow-2xl">
-              <div className="bg-white rounded-2xl p-6 space-y-4">
+              <div className="bg-card rounded-2xl p-6 space-y-4 border">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-lg">M</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Profesora María</div>
-                    <div className="text-sm text-gray-600">Docente Especializada</div>
+                    <div className="font-semibold text-card-foreground">Profesora María</div>
+                    <div className="text-sm text-muted-foreground">Docente Especializada</div>
                   </div>
                 </div>
                 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Matemáticas</span>
-                    <div className="w-20 h-2 bg-gray-200 rounded-full">
+                    <span className="text-sm text-muted-foreground">Matemáticas</span>
+                    <div className="w-20 h-2 bg-muted rounded-full">
                       <div className="w-4/5 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                     </div>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Español</span>
-                    <div className="w-20 h-2 bg-gray-200 rounded-full">
+                    <span className="text-sm text-muted-foreground">Español</span>
+                    <div className="w-20 h-2 bg-muted rounded-full">
                       <div className="w-full h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                     </div>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Ciencias</span>
-                    <div className="w-20 h-2 bg-gray-200 rounded-full">
+                    <span className="text-sm text-muted-foreground">Ciencias</span>
+                    <div className="w-20 h-2 bg-muted rounded-full">
                       <div className="w-3/4 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                     </div>
                   </div>
@@ -101,10 +101,10 @@ export const Hero = () => {
             </div>
             
             {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-3">
+            <div className="absolute -top-4 -right-4 bg-card rounded-lg shadow-lg p-3 border">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span className="text-sm font-medium">En línea</span>
+                <span className="text-sm font-medium text-card-foreground">En línea</span>
               </div>
             </div>
           </div>

@@ -38,25 +38,25 @@ export const SubmitAssignmentModal = ({ isOpen, onClose, assignment }: SubmitAss
       <div className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="text-sm font-medium text-gray-600">Actividad</label>
+            <label className="text-sm font-medium text-muted-foreground">Actividad</label>
             <p className="text-lg">{assignment.titulo}</p>
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-600">Materia</label>
+            <label className="text-sm font-medium text-muted-foreground">Materia</label>
             <p className="text-lg">{assignment.materia}</p>
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-600">Tipo</label>
+            <label className="text-sm font-medium text-muted-foreground">Tipo</label>
             <p className="text-lg">{assignment.tipo}</p>
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-600">Fecha Límite</label>
+            <label className="text-sm font-medium text-muted-foreground">Fecha Límite</label>
             <p className="text-lg">{assignment.fechaVencimiento}</p>
           </div>
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-600">Contenido de la Entrega</label>
+          <label className="text-sm font-medium text-muted-foreground">Contenido de la Entrega</label>
           <Textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -67,14 +67,14 @@ export const SubmitAssignmentModal = ({ isOpen, onClose, assignment }: SubmitAss
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-600">Archivo Adjunto (Opcional)</label>
+          <label className="text-sm font-medium text-muted-foreground">Archivo Adjunto (Opcional)</label>
           <div className="mt-1 flex items-center space-x-2">
             <input
               type="file"
               onChange={handleFileChange}
-              className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+              className="block w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
             />
-            <Upload className="h-4 w-4 text-gray-400" />
+            <Upload className="h-4 w-4 text-muted-foreground" />
           </div>
           {file && (
             <p className="text-sm text-green-600 mt-1">Archivo seleccionado: {file.name}</p>

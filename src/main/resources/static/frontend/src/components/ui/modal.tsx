@@ -23,10 +23,10 @@ export const Modal = ({ isOpen, onClose, title, children, size = "md" }: ModalPr
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className={cn("bg-white rounded-lg shadow-lg w-full mx-4", sizeClasses[size])}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      <div className={cn("bg-background rounded-lg shadow-lg w-full mx-4 border", sizeClasses[size])}>
         <div className="flex justify-between items-center p-6 border-b">
-          <h2 className="text-xl font-semibold">{title}</h2>
+          <h2 className="text-xl font-semibold text-foreground">{title}</h2>
           <Button variant="ghost" size="sm" onClick={onClose}>
             <X className="h-4 w-4" />
           </Button>

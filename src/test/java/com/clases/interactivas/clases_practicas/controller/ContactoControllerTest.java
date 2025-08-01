@@ -3,6 +3,7 @@ package com.clases.interactivas.clases_practicas.controller;
 import com.clases.interactivas.clases_practicas.security.CustomUserDetailsService;
 import com.clases.interactivas.clases_practicas.security.JwtTokenProvider;
 import com.clases.interactivas.clases_practicas.service.impl.ContactoService;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -43,6 +44,7 @@ class ContactoControllerTest {
    
 
     @Test
+    @DisplayName("Debería obtener todos los contactos")
     void getAllContactos() throws Exception {
         Contacto contacto = new Contacto();
         when(contactoService.getAllContactos()).thenReturn(Arrays.asList(contacto));
@@ -51,6 +53,7 @@ class ContactoControllerTest {
     }
 
     @Test
+    @DisplayName("Debería obtener contacto por ID")
     void getContactoById() throws Exception {
         Contacto contacto = new Contacto();
         when(contactoService.getContactoById(1L)).thenReturn(contacto);
@@ -59,6 +62,7 @@ class ContactoControllerTest {
     }
 
     @Test
+    @DisplayName("Debería crear un contacto exitosamente")
     void createContacto() throws Exception {
         Contacto contacto = new Contacto();
         when(contactoService.createContacto(any(Contacto.class))).thenReturn(contacto);
@@ -71,6 +75,7 @@ class ContactoControllerTest {
     }
 
     @Test
+    @DisplayName("Debería actualizar un contacto exitosamente")
     void updateContacto() throws Exception {
         Contacto contacto = new Contacto();
         when(contactoService.updateContacto(eq(1L), any(Contacto.class))).thenReturn(contacto);
@@ -81,6 +86,7 @@ class ContactoControllerTest {
     }
 
     @Test
+    @DisplayName("Debería eliminar un contacto exitosamente")
     void deleteContacto() throws Exception {
         doNothing().when(contactoService).deleteContacto(1L);
         mockMvc.perform(delete("/api/contacto/1"))
@@ -88,6 +94,7 @@ class ContactoControllerTest {
     }
 
     @Test
+    @DisplayName("Debería buscar contactos por correo")
     void findByCorreo() throws Exception {
         Contacto contacto = new Contacto();
         when(contactoService.findByCorreo("correo@ejemplo.com")).thenReturn(Collections.singletonList(contacto));
@@ -96,6 +103,7 @@ class ContactoControllerTest {
     }
 
     @Test
+    @DisplayName("Debería buscar contactos por teléfono")
     void findByTelefono() throws Exception {
         Contacto contacto = new Contacto();
         when(contactoService.findByTelefono("123456789")).thenReturn(Collections.singletonList(contacto));
@@ -112,6 +120,7 @@ class ContactoControllerTest {
 //    }
 
     @Test
+    @DisplayName("Debería devolver 404 cuando el contacto no existe")
     void testGetContactoById_notFound() throws Exception {
         // Suponiendo que no existe el contacto con ID 9999
         mockMvc.perform(get("/api/contacto/9999"))
@@ -119,6 +128,7 @@ class ContactoControllerTest {
     }
 
     @Test
+    @DisplayName("Debería devolver 400 al crear contacto con datos inválidos")
     void testCreateContacto_invalidInput() throws Exception {
         String contactoJson = "{\"nombre\":\"\",\"correo\":\"\",\"mensaje\":\"\",\"telefono\":\"\",\"asunto\":\"\"}";
         mockMvc.perform(post("/api/contacto")
@@ -128,6 +138,7 @@ class ContactoControllerTest {
     }
 
     @Test
+    @DisplayName("Debería devolver 404 al actualizar contacto inexistente")
     void testUpdateContacto_notFound() throws Exception {
         String contactoJson = "{\"nombre\":\"Nuevo\",\"correo\":\"nuevo@mail.com\",\"mensaje\":\"Hola\",\"telefono\":\"123456\",\"asunto\":\"Clases\"}";
         mockMvc.perform(put("/api/contacto/9999")

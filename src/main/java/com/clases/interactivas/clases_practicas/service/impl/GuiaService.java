@@ -4,6 +4,7 @@ import com.clases.interactivas.clases_practicas.model.Guia;
 import com.clases.interactivas.clases_practicas.repository.GuiaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,6 +15,9 @@ public class GuiaService {
     @Autowired
     private GuiaRepository guiaRepository;
 
+    @Autowired
+    private FileStorageService fileStorageService;
+
     public List<Guia> getAllGuias() {
         return guiaRepository.findAll();
     }
@@ -22,16 +26,26 @@ public class GuiaService {
         return guiaRepository.findById(id).orElse(null);
     }
 
-    public Guia createGuia(Guia guia) {
+    public Guia createGuia(Guia guia, MultipartFile file) {
+        String fileName = fileStorageService.storeFile(file);
+        guia.setUrl(fileName);
         return guiaRepository.save(guia);
     }
 
-    public Guia updateGuia(Long id, Guia guia) {
-        if (guiaRepository.existsById(id)) {
-            guia.setId(id);
-            return guiaRepository.save(guia);
-        }
-        return null;
+    public Guia updateGuia(Long id, Guia guia, MultipartFile file) {
+        return guiaRepository.findById(id)
+                .map(existingGuia -> {
+                    existingGuia.setTitulo(guia.getTitulo());
+                    existingGuia.setDescripcion(guia.getDescripcion());
+                    if (file != null) {
+                        String fileName = fileStorageService.storeFile(file);
+                        existingGuia.setUrl(fileName);
+                    }
+                    existingGuia.setFechaPublicacion(guia.getFechaPublicacion());
+                    existingGuia.setDocente(guia.getDocente());
+                    return guiaRepository.save(existingGuia);
+                })
+                .orElse(null);
     }
 
     public void deleteGuia(Long id) {

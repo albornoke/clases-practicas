@@ -22,11 +22,11 @@ export const GenerateReportModal = ({ isOpen, onClose }: GenerateReportModalProp
     <Modal isOpen={isOpen} onClose={onClose} title="Generar Reporte" size="md">
       <div className="space-y-4">
         <div>
-          <label className="text-sm font-medium text-gray-600">Tipo de Reporte</label>
+          <label className="text-sm font-medium text-muted-foreground">Tipo de Reporte</label>
           <select 
             value={reportType} 
             onChange={(e) => setReportType(e.target.value)}
-            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2"
+            className="mt-1 block w-full rounded-md border border-input bg-background px-3 py-2 text-foreground"
           >
             <option value="general">Reporte General</option>
             <option value="usuarios">Usuarios</option>
@@ -36,11 +36,11 @@ export const GenerateReportModal = ({ isOpen, onClose }: GenerateReportModalProp
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-600">Período</label>
+          <label className="text-sm font-medium text-muted-foreground">Período</label>
           <select 
             value={dateRange} 
             onChange={(e) => setDateRange(e.target.value)}
-            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2"
+            className="mt-1 block w-full rounded-md border border-input bg-background px-3 py-2 text-foreground"
           >
             <option value="week">Última Semana</option>
             <option value="month">Último Mes</option>

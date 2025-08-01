@@ -3,8 +3,13 @@ package com.clases.interactivas.clases_practicas.controller;
 import com.clases.interactivas.clases_practicas.model.Guia;
 import com.clases.interactivas.clases_practicas.service.impl.GuiaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Map;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -28,14 +33,51 @@ public class GuiaController {
         return guia != null ? ResponseEntity.ok(guia) : ResponseEntity.notFound().build();
     }
 
-    @PostMapping
-    public Guia createGuia(@RequestBody Guia guia) {
-        return guiaService.createGuia(guia);
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<?> createGuia(
+            @RequestPart("guia") Guia guia,
+            @RequestPart("file") MultipartFile file) {
+        // Validar tipo de archivo
+        String contentType = file.getContentType();
+        if (!(contentType != null && (contentType.equals("application/pdf") ||
+                contentType.equals("application/msword") ||
+                contentType.equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document")))) {
+            return ResponseEntity.badRequest().body(Map.of(
+                    "message", "Solo se permiten archivos PDF y Word"
+            ));
+        }
+        // Validar tamaño (5MB máximo)
+        if (file.getSize() > 5 * 1024 * 1024) {
+            return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body(Map.of(
+                    "message", "El archivo excede el tamaño máximo permitido (5MB)"
+            ));
+        }
+        return ResponseEntity.ok(guiaService.createGuia(guia, file));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Guia> updateGuia(@PathVariable Long id, @RequestBody Guia guia) {
-        Guia updatedGuia = guiaService.updateGuia(id, guia);
+    @PutMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<?> updateGuia(
+            @PathVariable Long id,
+            @RequestPart("guia") Guia guia,
+            @RequestPart(value = "file", required = false) MultipartFile file) {
+        
+        if (file != null) {
+            String contentType = file.getContentType();
+            if (!(contentType != null && (contentType.equals("application/pdf") ||
+                    contentType.equals("application/msword") ||
+                    contentType.equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document")))) {
+                return ResponseEntity.badRequest().body(Map.of(
+                        "message", "Solo se permiten archivos PDF y Word"
+                ));
+            }
+            if (file.getSize() > 5 * 1024 * 1024) {
+                return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body(Map.of(
+                        "message", "El archivo excede el tamaño máximo permitido (5MB)"
+                ));
+            }
+        }
+
+        Guia updatedGuia = guiaService.updateGuia(id, guia, file);
         return updatedGuia != null ? ResponseEntity.ok(updatedGuia) : ResponseEntity.notFound().build();
     }
 

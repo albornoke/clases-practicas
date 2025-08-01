@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-secondary/5 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
@@ -48,8 +48,8 @@ const Login = () => {
             <BookOpen className="h-8 w-8 text-primary" />
             <span className="text-2xl font-bold text-primary">EduPlatform</span>
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900">Acceso al Portal</h1>
-          <p className="text-gray-600 mt-2">Ingresa tus credenciales para continuar</p>
+          <h1 className="text-3xl font-bold text-foreground">Acceso al Portal</h1>
+          <p className="text-muted-foreground mt-2">Ingresa tus credenciales para continuar</p>
         </div>
 
         {/* Login Form */}
@@ -63,7 +63,7 @@ const Login = () => {
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                <label htmlFor="email" className="text-sm font-medium text-foreground">
                   Email
                 </label>
                 <Input
@@ -77,7 +77,7 @@ const Login = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="password" className="text-sm font-medium text-gray-700">
+                <label htmlFor="password" className="text-sm font-medium text-foreground">
                   Contraseña
                 </label>
                 <div className="relative">
@@ -98,9 +98,9 @@ const Login = () => {
                     disabled={isLoading}
                   >
                     {showPassword ? (
-                      <EyeOff className="h-4 w-4 text-gray-400" />
+                      <EyeOff className="h-4 w-4 text-muted-foreground" />
                     ) : (
-                      <Eye className="h-4 w-4 text-gray-400" />
+                      <Eye className="h-4 w-4 text-muted-foreground" />
                     )}
                   </button>
                 </div>
@@ -117,12 +117,12 @@ const Login = () => {
 
             {/* Footer Links */}
             <div className="mt-6 text-center space-y-2">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 <a href="#" className="text-primary hover:underline">
                   ¿Olvidaste tu contraseña?
                 </a>
               </p>
-              <Link to="/" className="text-sm text-gray-600 hover:text-primary transition-colors block">
+              <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors block">
                 ← Volver al inicio
               </Link>
             </div>

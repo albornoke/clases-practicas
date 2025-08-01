@@ -1,6 +1,8 @@
 package com.clases.interactivas.clases_practicas.model;
 
 import java.sql.Date;
+import java.time.LocalDate;
+
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -9,6 +11,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "guia")
@@ -17,19 +20,23 @@ public class Guia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "titulo")
+    @NotBlank(message = "El título es obligatorio")
     private String titulo;
     @Column(name = "descripcion")
+    @NotBlank(message = "La descripción es obligatoria")
     private String descripcion;
     @Column(name = "url")
     private String url;
     @Column(name = "fecha_publicacion")
     private Date fechaPublicacion;
     @ManyToOne
-    @JoinColumn(name = "docente_id", nullable = false) // Asegúrate que la columna referenciada exista y considera nullable=false si una clase siempre debe tener un docente.
+    @JoinColumn(name = "docente_id", nullable = false) 
 
     private Docente docente;
 
-    public Guia(){}
+    public Guia(){
+        this.fechaPublicacion = Date.valueOf(LocalDate.now());
+    }
 
     public Guia(long id, String titulo, String descripcion, String url, Date fechaPublicacion, Docente docente) {
         this.id = id;

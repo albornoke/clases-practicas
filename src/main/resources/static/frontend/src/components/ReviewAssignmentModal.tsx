@@ -32,37 +32,37 @@ export const ReviewAssignmentModal = ({ isOpen, onClose, assignment }: ReviewAss
       <div className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="text-sm font-medium text-gray-600">Estudiante</label>
+            <label className="text-sm font-medium text-muted-foreground">Estudiante</label>
             <p className="text-lg">{assignment.estudiante}</p>
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-600">Actividad</label>
+            <label className="text-sm font-medium text-muted-foreground">Actividad</label>
             <p className="text-lg">{assignment.actividad}</p>
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-600">Materia</label>
+            <label className="text-sm font-medium text-muted-foreground">Materia</label>
             <p className="text-lg">{assignment.materia}</p>
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-600">Tipo</label>
+            <label className="text-sm font-medium text-muted-foreground">Tipo</label>
             <Badge variant="outline">{assignment.tipo}</Badge>
           </div>
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-600">Fecha de Entrega</label>
+          <label className="text-sm font-medium text-muted-foreground">Fecha de Entrega</label>
           <p className="text-lg">{assignment.fechaEntrega}</p>
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-600">Contenido Entregado</label>
-          <div className="mt-1 p-4 bg-gray-50 rounded-lg">
+          <label className="text-sm font-medium text-muted-foreground">Contenido Entregado</label>
+          <div className="mt-1 p-4 bg-muted/50 rounded-lg border">
             <p>Aquí se mostraría el contenido que el estudiante entregó para esta actividad. Podría incluir texto, archivos adjuntos, etc.</p>
           </div>
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-600">Comentarios de Revisión</label>
+          <label className="text-sm font-medium text-muted-foreground">Comentarios de Revisión</label>
           <Textarea
             value={feedback}
             onChange={(e) => setFeedback(e.target.value)}

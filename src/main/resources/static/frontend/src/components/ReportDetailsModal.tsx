@@ -33,19 +33,19 @@ export const ReportDetailsModal = ({ isOpen, onClose, report }: ReportDetailsMod
       <div className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="text-sm font-medium text-gray-600">Usuario</label>
+            <label className="text-sm font-medium text-muted-foreground">Usuario</label>
             <p className="text-lg">{report.usuario}</p>
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-600">Tipo</label>
+            <label className="text-sm font-medium text-muted-foreground">Tipo</label>
             <p className="text-lg">{report.tipo}</p>
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-600">Fecha</label>
+            <label className="text-sm font-medium text-muted-foreground">Fecha</label>
             <p className="text-lg">{report.fecha}</p>
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-600">Estado Actual</label>
+            <label className="text-sm font-medium text-muted-foreground">Estado Actual</label>
             <Badge 
               variant={
                 report.estado === "Resuelto" ? "default" : 
@@ -58,12 +58,12 @@ export const ReportDetailsModal = ({ isOpen, onClose, report }: ReportDetailsMod
         </div>
         
         <div>
-          <label className="text-sm font-medium text-gray-600">Descripción</label>
-          <p className="text-lg mt-1 p-3 bg-gray-50 rounded">{report.descripcion}</p>
+          <label className="text-sm font-medium text-muted-foreground">Descripción</label>
+          <p className="text-lg mt-1 p-3 bg-muted/50 rounded border">{report.descripcion}</p>
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-600">Resolución</label>
+          <label className="text-sm font-medium text-muted-foreground">Resolución</label>
           <Textarea
             value={resolution}
             onChange={(e) => setResolution(e.target.value)}
@@ -74,11 +74,11 @@ export const ReportDetailsModal = ({ isOpen, onClose, report }: ReportDetailsMod
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-600">Nuevo Estado</label>
+          <label className="text-sm font-medium text-muted-foreground">Nuevo Estado</label>
           <select 
             value={newStatus} 
             onChange={(e) => setNewStatus(e.target.value)}
-            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2"
+            className="mt-1 block w-full rounded-md border border-input bg-background px-3 py-2 text-foreground"
           >
             <option value="Pendiente">Pendiente</option>
             <option value="En proceso">En proceso</option>

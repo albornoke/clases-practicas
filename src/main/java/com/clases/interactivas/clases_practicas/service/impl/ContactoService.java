@@ -15,6 +15,10 @@ public class ContactoService {
     @Autowired
     private ContactoRepository contactoRepository;
 
+    public ContactoService(ContactoRepository contactoRepository) {
+        this.contactoRepository = contactoRepository;
+    }
+
     public List<Contacto> getAllContactos() {
         return contactoRepository.findAll();
     }

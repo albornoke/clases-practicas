@@ -74,7 +74,7 @@ const StudentRegister = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-secondary/5 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
@@ -82,8 +82,8 @@ const StudentRegister = () => {
             <BookOpen className="h-8 w-8 text-primary" />
             <span className="text-2xl font-bold text-primary">EduPlatform</span>
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900">Registro de Estudiante</h1>
-          <p className="text-gray-600 mt-2">Crea tu cuenta para comenzar a aprender</p>
+          <h1 className="text-3xl font-bold text-foreground">Registro de Estudiante</h1>
+          <p className="text-muted-foreground mt-2">Crea tu cuenta para comenzar a aprender</p>
         </div>
         {/* Registration Form */}
         <Card className="shadow-xl border-0">
@@ -175,7 +175,7 @@ const StudentRegister = () => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="foto">Foto de Perfil</Label>
-                <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                <div className="border-2 border-dashed border-input rounded-lg p-4 text-center">
                   <input
                     id="foto"
                     type="file"
@@ -187,14 +187,14 @@ const StudentRegister = () => {
                     htmlFor="foto"
                     className="cursor-pointer flex flex-col items-center space-y-2"
                   >
-                    <Upload className="h-8 w-8 text-gray-400" />
-                    <span className="text-sm text-gray-600">
+                    <Upload className="h-8 w-8 text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground">
                       {formData.foto ? formData.foto.name : "Seleccionar imagen"}
                     </span>
                   </label>
                 </div>
               </div>
-              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
+              <Button type="submit" className="w-full">
                 Crear Cuenta
               </Button>
             </form>
