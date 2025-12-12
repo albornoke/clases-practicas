@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://prod-db-host:5432/plataforma_clases
-    username: postgre
-    password: 12345
+    url: 
+    username: 
+    password: 
     driver-class-name: org.postgresql.Driver
   jpa:
     open-in-view: false
@@ -18,7 +18,7 @@ server:
 file:
   upload-dir: uploads
 jwt:
-  secret: JjdP3kF5rDvhReN48gak6mfF3JMWoeJXtklmGzxBkwVDRoVX7MtxJD5Z+z6KIR0eKTYiATc9bdUrqgQZlPOaQA==
+  secret: 
   expiration:
     ms: 86400000
 
