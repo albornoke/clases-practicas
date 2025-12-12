@@ -1,9 +1,9 @@
 # Combined spring configuration
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/plataforma_clases
-    username: postgres
-    password: 12345
+    url: 
+    username: 
+    password: 
     driver-class-name: org.postgresql.Driver
   jpa:
     open-in-view: false
@@ -45,6 +45,6 @@ google:
 #    endpoint: http://localhost:8080/api/ai # O la URL real de tu API de IA
 #    key: YourAIAPIKeyHere # Reemplaza con tu clave de API real
 jwt:
-  secret: JjdP3kF5rDvhReN48gak6mfF3JMWoeJXtklmGzxBkwVDRoVX7MtxJD5Z+z6KIR0eKTYiATc9bdUrqgQZlPOaQA==
+  secret: 
   expiration:
     ms: 86400000
